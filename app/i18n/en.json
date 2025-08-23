@@ -93,8 +93,12 @@
     "idBack": "ID back",
     "selfie": "Selfie with ID",
     "submit": "Finish",
-    "warnings": { "blurry": "Image may be blurry" },
-    "errors": { "photo": "Image too small" }
+    "warnings": {
+      "blurry": "Image may be blurry"
+    },
+    "errors": {
+      "photo": "Image too small"
+    }
   },
   "viewer": {
     "search": "Search",
@@ -113,5 +117,56 @@
     "back": "Back",
     "ok": "OK",
     "continue": "Continue"
+  },
+  "dashboard": {
+    "friend": "friend",
+    "offline": "Showing offline data",
+    "greetings": {
+      "morning": "Good morning, {name}!",
+      "day": "Hello, {name}!",
+      "evening": "Good evening, {name}!"
+    },
+    "subscription": {
+      "plan": "Plan: {plan}",
+      "usedOf": "{used} of {limit} swaps",
+      "daysLeft": "{days} days left"
+    },
+    "bike": {
+      "status": {
+        "ok": "OK",
+        "service": "Needs service",
+        "issue": "Fault"
+      },
+      "find": "Locate on map"
+    },
+    "maintenance": {
+      "last": "Last service",
+      "next": "Next service",
+      "book": "Book service"
+    },
+    "maintenanceStatus": {
+      "great": "Great",
+      "good": "Good",
+      "attention": "Attention needed"
+    },
+    "actions": {
+      "scanQR": "Scan QR",
+      "nearestStations": "Nearest stations",
+      "history": "Operation history",
+      "myDocuments": "My documents",
+      "support": "Support"
+    },
+    "stats": {
+      "kmThisMonth": "km this month",
+      "co2Saved": "CO₂ saved",
+      "swapsThisMonth": "swaps this month",
+      "ecoScore": "Eco score"
+    },
+    "news": {
+      "title": "News & promotions",
+      "empty": "No news",
+      "cityTag": "{city}"
+    },
+    "inProgress": "Under construction"
   }
 }

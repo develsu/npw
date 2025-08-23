@@ -1,0 +1,4 @@
+.subscription-card{min-width:260px;}
+.subscription-card__bar{background:#eee;border-radius:4px;height:8px;margin:0.5rem 0;}
+.subscription-card__bar div{background:var(--primary);height:100%;border-radius:4px;}
+.subscription-card canvas{width:100%;margin-top:0.5rem;}

@@ -1,0 +1,7 @@
+.news-carousel{margin-top:1rem;}
+.news-carousel__track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:1rem;padding-bottom:.5rem;}
+.news-card{min-width:80%;scroll-snap-align:start;background:var(--bg);box-shadow:0 1px 3px rgba(0,0,0,.1);border-radius:12px;padding:1rem;}
+.news-card__meta{font-size:.8rem;color:gray;}
+.news-carousel__dots{display:flex;justify-content:center;gap:.25rem;margin-top:.5rem;}
+.news-carousel__dots .dot{width:8px;height:8px;border-radius:50%;background:#ccc;}
+.news-carousel__dots .dot.active{background:var(--primary);}
