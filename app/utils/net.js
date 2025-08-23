@@ -1,5 +1,6 @@
 import Storage from './storage.js';
 import { queueReport } from './offline.js';
+import loadJson from './loadJson.js';
 
 export async function fetchWithTimeout(url, options = {}, timeout = 8000, retries = 0) {
   for (let attempt = 0; attempt <= retries; attempt++) {
@@ -28,8 +29,7 @@ export function onNetworkChange(handler) {
 
 export async function fetchCities() {
   await new Promise(r => setTimeout(r, 300));
-  const res = await fetch('./data/cities.json');
-  return res.json();
+  return loadJson('./data/cities.json');
 }
 
 export async function fetchAgreementsMeta() {
@@ -64,8 +64,7 @@ async function fetchWithCache(key, url) {
   await new Promise(r => setTimeout(r, delay));
   try {
     if (!isOnline()) throw new Error('offline');
-    const res = await fetch(url);
-    const data = await res.json();
+    const data = await loadJson(url);
     storage.set(key, data);
     return { data, fromCache: false };
   } catch (e) {
@@ -112,8 +111,7 @@ export async function fetchStationMock(stationId) {
   const delay = 300 + Math.random() * 500;
   await new Promise(r => setTimeout(r, delay));
   try {
-    const res = await fetch('./data/stations.json');
-    const list = await res.json();
+    const list = await loadJson('./data/stations.json');
     const station = list.find(s => s.id === stationId);
     if (!station) return { ok: false };
     const free = Math.max(0, station.slots - station.charged);
