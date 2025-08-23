@@ -1,0 +1,5 @@
+{
+  "common": {"appName": "EcoBike", "language": "Язык"},
+  "auth": {"login": "Войти", "logout": "Выйти"},
+  "errors": {"offline": "Нет соединения"}
+}
