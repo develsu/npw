@@ -1,12 +1,13 @@
 import { t, onLangChange } from '../utils/i18n.js';
 import { fetchCities, fetchAgreementsMeta } from '../utils/net.js';
 import Storage from '../utils/storage.js';
+import { isAllAccepted } from '../utils/agreements.js';
 
 const storage = new Storage('eco');
 
 function nextRoute() {
   if (storage.get('firstLaunch', true)) return 'onboarding';
-  if (!storage.get('agreements.accepted', false)) return 'agreements';
+  if (!isAllAccepted()) return 'agreements';
   if (!storage.get('user.auth', false)) return 'auth';
   return 'dashboard';
 }

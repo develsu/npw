@@ -1,0 +1,50 @@
+.agreements {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.agreements__list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.agreements__card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 12px;
+  background: #fff;
+}
+
+.agreements__card h2 {
+  margin: 0 0 8px 0;
+  font-size: 1.1rem;
+}
+
+.agreements__card p {
+  margin: 0 0 12px 0;
+  font-size: 0.9rem;
+}
+
+.agreements__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.agreements__actions button {
+  flex-shrink: 0;
+}
+
+.agreements__actions input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+}
+
+.agreements__continue {
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 6px;
+}

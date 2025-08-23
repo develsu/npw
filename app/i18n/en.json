@@ -55,15 +55,32 @@
     "continue": "Continue"
   },
   "agreements": {
-    "title": "Agreements",
-    "accept": "Accept",
-    "meta": {
-      "terms": "User Agreement",
-      "privacy": "Privacy Policy"
+    "screenTitle": "Before you start",
+    "read": "Read full",
+    "accept": "I agree",
+    "terms": {
+      "title": "User Agreement",
+      "desc": "Main rules of using the service"
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "desc": "How we handle your data"
+    },
+    "safety": {
+      "title": "Safety Rules",
+      "desc": "Ride responsibly and stay safe"
     }
   },
   "cities": {
     "choose": "Select your city"
+  },
+  "viewer": {
+    "search": "Search",
+    "prev": "Prev",
+    "next": "Next",
+    "page": "Page",
+    "download": "Download PDF",
+    "close": "Close"
   },
   "errors": {
     "offline": "No internet connection",
@@ -72,6 +89,7 @@
   "buttons": {
     "next": "Next",
     "back": "Back",
-    "ok": "OK"
+    "ok": "OK",
+    "continue": "Continue"
   }
 }
