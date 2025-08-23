@@ -8,6 +8,7 @@ const translations = {
       { title: 'Тарифті таңдаңыз', desc: '2 ауыстырудан шексізге дейін' },
     ],
     next: 'Келесі',
+
     start: 'Бастау',
     authTitle: 'Телефон нөмірін енгізіңіз',
     getCode: 'Код алу',
@@ -15,6 +16,7 @@ const translations = {
     resend: 'Қайта жіберу',
     changeNumber: 'Нөмірді өзгерту',
     help: 'Көмек',
+
     invalidNumber: 'Нөмір қате',
     agreementsTitle: 'Бастамас бұрын',
     read: 'Толық оқу',
@@ -36,6 +38,12 @@ const translations = {
         accept: 'Ережелермен таныстым'
       }
     ]
+
+    invalidNumber: 'Нөмір қате'
+
+    start: 'Бастау'
+
+
   },
   ru: {
     greeting: 'Привет, EcoBike!',
@@ -74,6 +82,10 @@ const translations = {
         accept: 'Ознакомлен с правилами'
       }
     ]
+
+    invalidNumber: 'Неверный номер'
+
+
   },
   en: {
     greeting: 'Hello, EcoBike!',
@@ -84,6 +96,7 @@ const translations = {
       { title: 'Choose your plan', desc: 'From 2 swaps a day to unlimited' },
     ],
     next: 'Next',
+
     start: 'Start',
     authTitle: 'Enter phone number',
     getCode: 'Get code',
@@ -112,6 +125,14 @@ const translations = {
         accept: 'I have read the rules'
       }
     ]
+
+    invalidNumber: 'Invalid number'
+
+
+    start: 'Start'
+
+
+
   }
 };
 
@@ -130,14 +151,17 @@ function setLanguage(lang) {
   document.documentElement.lang = lang;
   document.getElementById('greeting').textContent = t.greeting;
   document.getElementById('city-label').textContent = t.cityLabel;
+
   document.getElementById('auth-title').textContent = t.authTitle;
   document.getElementById('get-code-btn').textContent = t.getCode;
   document.getElementById('help-btn').textContent = t.help;
   document.getElementById('resend-btn').textContent = t.resend;
   document.getElementById('change-number-btn').textContent = t.changeNumber;
+
   document.getElementById('agreements-title').textContent = t.agreementsTitle;
   document.getElementById('agreements-continue').textContent = t.continue;
   updateAgreementsText();
+
   updateCodeSentText();
   updateSlide();
 }
@@ -149,10 +173,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const phoneScreen = document.getElementById('phone-screen');
   const otpScreen = document.getElementById('otp-screen');
   const agreements = document.getElementById('agreements');
+  const auth = document.getElementById('auth');
+  const phoneScreen = document.getElementById('phone-screen');
+  const otpScreen = document.getElementById('otp-screen');
   const app = document.getElementById('app');
   const phoneInput = document.getElementById('phone');
   const getCodeBtn = document.getElementById('get-code-btn');
   const otpInputs = document.querySelectorAll('.otp-inputs input');
+  const app = document.getElementById('app');
+
+
 
   setLanguage(currentLang);
   document.querySelectorAll('.lang-btn').forEach(btn => {
@@ -169,10 +199,18 @@ document.addEventListener('DOMContentLoaded', () => {
     if (slideIndex >= translations[currentLang].slides.length) {
       onboarding.classList.add('hidden');
       auth.classList.remove('hidden');
+
+
+      auth.classList.remove('hidden');
+      app.classList.remove('hidden');
+
+
+
     } else {
       updateSlide();
     }
   });
+
 
   phoneInput.addEventListener('input', maskPhoneInput);
 
@@ -235,13 +273,25 @@ document.addEventListener('DOMContentLoaded', () => {
     app.classList.remove('hidden');
   });
 
+
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('service-worker.js');
   }
 });
 
 let slideIndex = 0;
+
 let codeSentPhone = '';
+
+
+let codeSentPhone = '';
+
+
+
+let codeSentPhone = '';
+
+
+
 
 function updateSlide() {
   const t = translations[currentLang];
@@ -251,6 +301,7 @@ function updateSlide() {
   document.getElementById('next-btn').textContent =
     slideIndex === t.slides.length - 1 ? t.start : t.next;
 }
+
 
 function maskPhoneInput(e) {
   let digits = e.target.value.replace(/\D/g, '');
@@ -273,6 +324,7 @@ function updateCodeSentText() {
   }
 }
 
+
 function updateAgreementsText() {
   const t = translations[currentLang].agreements;
   document.getElementById('user-agreement-title').textContent = t[0].title;
@@ -289,12 +341,17 @@ function updateAgreementsText() {
   });
 }
 
+
 function verifyOtp() {
   const code = Array.from(document.querySelectorAll('.otp-inputs input'))
     .map(i => i.value)
     .join('');
   if (code.length === 6) {
     document.getElementById('auth').classList.add('hidden');
+
     document.getElementById('agreements').classList.remove('hidden');
+
+    document.getElementById('app').classList.remove('hidden');
+
   }
 }
