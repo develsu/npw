@@ -37,10 +37,30 @@ export async function fetchAgreementsMeta() {
   ];
 }
 
+export async function sendOtpMock(phone) {
+  const delay = 800 + Math.random() * 400;
+  await new Promise(r => setTimeout(r, delay));
+  const digits = phone.replace(/\D/g, '');
+  if (digits.endsWith('0000')) return { ok: false, code: 'SMS_LIMIT' };
+  if (digits.endsWith('1111')) return { ok: false, code: 'BLOCKED' };
+  return { ok: true };
+}
+
+export async function verifyOtpMock(phone, code) {
+  const delay = 800 + Math.random() * 400;
+  await new Promise(r => setTimeout(r, delay));
+  if (code === '123456') return { ok: true };
+  if (code === '000000') return { ok: false, code: 'ATTEMPTS_EXCEEDED' };
+  return { ok: false, code: 'INVALID_CODE' };
+}
+
 export default {
   fetchWithTimeout,
   isOnline,
   onNetworkChange,
   fetchCities,
-  fetchAgreementsMeta
+  fetchAgreementsMeta,
+  sendOtpMock,
+  verifyOtpMock
 };
+
