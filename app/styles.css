@@ -220,3 +220,19 @@ input[type="tel"] {
   border-radius: 8px;
   margin-top: 0.25rem;
 }
+
+.map-container {
+  height: 300px;
+  margin: 1rem 0;
+}
+
+.station-marker {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+.station-marker.green { background: #2ecc71; }
+.station-marker.yellow { background: #f1c40f; }
+.station-marker.red { background: #e74c3c; }
+.station-marker.gray { background: #95a5a6; }

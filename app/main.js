@@ -52,6 +52,8 @@ const translations = {
       }
     ],
     viewTariffs: 'Тарифтер',
+    viewMap: 'Станциялар картасы',
+    mapTitle: 'Станциялар',
     tariffsTitle: 'Тарифтік жоспарлар',
     close: 'Жабу',
     tariffs: [
@@ -173,6 +175,8 @@ const translations = {
       }
     ],
     viewTariffs: 'Тарифы',
+    viewMap: 'Карта станций',
+    mapTitle: 'Станции',
     tariffsTitle: 'Тарифные планы',
     close: 'Закрыть',
     tariffs: [
@@ -294,6 +298,8 @@ const translations = {
       }
     ],
     viewTariffs: 'Plans',
+    viewMap: 'Stations map',
+    mapTitle: 'Stations',
     tariffsTitle: 'Tariff plans',
     close: 'Close',
     tariffs: [
@@ -364,6 +370,21 @@ const translations = {
   }
 };
 
+const stationData = {
+  almaty: [
+    { name: 'Абай', coords: [43.238949, 76.889709], batteries: 8 },
+    { name: 'Достык', coords: [43.242, 76.888], batteries: 3 },
+    { name: 'Сайран', coords: [43.222, 76.851], batteries: 0 }
+  ],
+  astana: [
+    { name: 'Байтерек', coords: [51.128, 71.430], batteries: 6 },
+    { name: 'Хан Шатыр', coords: [51.090, 71.418], batteries: 1 }
+  ],
+  shymkent: [
+    { name: 'Ордабасы', coords: [42.318, 69.598], batteries: 4 }
+  ]
+};
+
 const languages = ['kz', 'ru', 'en'];
 
 function detectLanguage() {
@@ -398,6 +419,9 @@ function setLanguage(lang) {
   document.getElementById('apt-label').textContent = t.apt;
   document.getElementById('register-btn').textContent = t.register;
   document.getElementById('view-tariffs').textContent = t.viewTariffs;
+  document.getElementById('view-map').textContent = t.viewMap;
+  document.getElementById('map-title').textContent = t.mapTitle;
+  document.getElementById('close-map').textContent = t.close;
   renderTariffs();
   updateAgreementsText();
   updateCodeSentText();
@@ -422,6 +446,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const tariffsSection = document.getElementById('tariffs');
   const viewTariffsBtn = document.getElementById('view-tariffs');
   const closeTariffsBtn = document.getElementById('close-tariffs');
+  const mapSection = document.getElementById('map-section');
+  const viewMapBtn = document.getElementById('view-map');
+  const closeMapBtn = document.getElementById('close-map');
   const appMain = document.querySelector('#app main');
 
   setLanguage(currentLang);
@@ -510,6 +537,23 @@ document.addEventListener('DOMContentLoaded', () => {
     appMain.classList.remove('hidden');
   });
 
+  viewMapBtn.addEventListener('click', () => {
+    appMain.classList.add('hidden');
+    mapSection.classList.remove('hidden');
+    renderMap(document.getElementById('city').value);
+  });
+
+  closeMapBtn.addEventListener('click', () => {
+    mapSection.classList.add('hidden');
+    appMain.classList.remove('hidden');
+  });
+
+  document.getElementById('city').addEventListener('change', e => {
+    if (!mapSection.classList.contains('hidden')) {
+      renderMap(e.target.value);
+    }
+  });
+
   document.getElementById('agreements-continue').addEventListener('click', () => {
     agreements.classList.add('hidden');
     registration.classList.remove('hidden');
@@ -571,6 +615,8 @@ document.addEventListener('DOMContentLoaded', () => {
 let slideIndex = 0;
 let codeSentPhone = '';
 let selectedCity = '';
+let map;
+let markers = [];
 
 function updateSlide() {
   const t = translations[currentLang];
@@ -632,6 +678,28 @@ function renderTariffs() {
       .join('')}</ul>`;
     plansContainer.appendChild(div);
   });
+}
+
+function renderMap(city) {
+  const stations = stationData[city] || [];
+  if (!map) {
+    map = L.map('map');
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+  }
+  markers.forEach(m => map.removeLayer(m));
+  markers = [];
+  if (stations.length) {
+    map.setView(stations[0].coords, 13);
+    stations.forEach(st => {
+      const color = st.batteries > 5 ? 'green' : st.batteries > 0 ? 'yellow' : 'red';
+      const icon = L.divIcon({ className: 'station-marker ' + color });
+      const marker = L.marker(st.coords, { icon }).addTo(map);
+      marker.bindPopup(`${st.name}: ${st.batteries}`);
+      markers.push(marker);
+    });
+  }
 }
 
 function verifyOtp() {

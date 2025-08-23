@@ -6,6 +6,7 @@
   <title>EcoBike PWA</title>
   <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
 </head>
 <body>
   <div id="splash" class="splash">
@@ -135,14 +136,21 @@
         <option value="taraz">Тараз</option>
       </select>
       <button id="view-tariffs" class="btn"></button>
+      <button id="view-map" class="btn"></button>
     </main>
     <section id="tariffs" class="hidden">
       <h2 id="tariffs-title"></h2>
       <div id="plans"></div>
       <button id="close-tariffs" class="btn"></button>
     </section>
+    <section id="map-section" class="hidden">
+      <h2 id="map-title"></h2>
+      <div id="map" class="map-container"></div>
+      <button id="close-map" class="btn"></button>
+    </section>
   </div>
 
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
   <script src="main.js"></script>
 </body>
 </html>
