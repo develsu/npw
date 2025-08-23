@@ -1,0 +1,5 @@
+.quick-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:1rem;}
+.quick-stats__item{background:var(--bg);box-shadow:0 1px 3px rgba(0,0,0,.1);border-radius:12px;padding:1rem;display:flex;flex-direction:column;align-items:center;}
+.quick-stats__value{font-size:1.2rem;font-weight:bold;}
+.quick-stats__label{font-size:.8rem;margin-top:.25rem;text-align:center;}
+@media(min-width:768px){.quick-stats{grid-template-columns:repeat(4,1fr);}}

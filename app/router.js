@@ -7,6 +7,11 @@ import AuthOtp from './routes/auth/otp.js';
 import Agreements from './routes/agreements.js';
 import City from './routes/city.js';
 import Register from './routes/register.js';
+import Dashboard from './routes/dashboard.js';
+import History from './routes/history.js';
+import Documents from './routes/documents.js';
+import Support from './routes/support.js';
+import Map from './routes/map.js';
 import { isAllAccepted } from './utils/agreements.js';
 import Storage from './utils/storage.js';
 
@@ -22,15 +27,11 @@ const routes = {
   agreements: Agreements,
   city: City,
   register: Register,
-  dashboard() {
-    const div = document.createElement('div');
-    const h1 = document.createElement('h1');
-    h1.textContent = t('common.appName');
-    const p = document.createElement('p');
-    p.textContent = formatMoneyKZT(12345);
-    div.append(h1, p);
-    return div;
-  }
+  dashboard: Dashboard,
+  history: History,
+  documents: Documents,
+  support: Support,
+  map: Map
 };
 
 function render(name) {

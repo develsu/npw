@@ -113,5 +113,56 @@
     "back": "Назад",
     "ok": "ОК",
     "continue": "Продолжить"
+  },
+  "dashboard": {
+    "friend": "друг",
+    "offline": "Показаны оффлайн-данные",
+    "greetings": {
+      "morning": "Доброе утро, {name}!",
+      "day": "Привет, {name}!",
+      "evening": "Добрый вечер, {name}!"
+    },
+    "subscription": {
+      "plan": "Тариф: {plan}",
+      "usedOf": "{used} из {limit} замен",
+      "daysLeft": "До окончания {days} дн"
+    },
+    "bike": {
+      "status": {
+        "ok": "OK",
+        "service": "Требует ТО",
+        "issue": "Неисправность"
+      },
+      "find": "Найти на карте"
+    },
+    "maintenance": {
+      "last": "Последнее ТО",
+      "next": "Следующее ТО",
+      "book": "Записаться на ТО"
+    },
+    "maintenanceStatus": {
+      "great": "Отлично",
+      "good": "Хорошо",
+      "attention": "Требует внимания"
+    },
+    "actions": {
+      "scanQR": "Сканировать QR",
+      "nearestStations": "Ближайшие станции",
+      "history": "История операций",
+      "myDocuments": "Мои документы",
+      "support": "Техподдержка"
+    },
+    "stats": {
+      "kmThisMonth": "км за месяц",
+      "co2Saved": "Сэкономлено CO₂",
+      "swapsThisMonth": "замен за месяц",
+      "ecoScore": "Эко-рейтинг"
+    },
+    "news": {
+      "title": "Новости и акции",
+      "empty": "Нет новостей",
+      "cityTag": "г. {city}"
+    },
+    "inProgress": "В разработке"
   }
 }

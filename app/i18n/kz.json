@@ -113,5 +113,56 @@
     "back": "Артқа",
     "ok": "ОК",
     "continue": "Жалғастыру"
+  },
+  "dashboard": {
+    "friend": "дос",
+    "offline": "Оффлайн-данные көрсетілуде",
+    "greetings": {
+      "morning": "Қайырлы таң, {name}!",
+      "day": "Сәлем, {name}!",
+      "evening": "Қайырлы кеш, {name}!"
+    },
+    "subscription": {
+      "plan": "Тариф: {plan}",
+      "usedOf": "{used} / {limit} ауыстыру",
+      "daysLeft": "Аяқталуына {days} күн"
+    },
+    "bike": {
+      "status": {
+        "ok": "OK",
+        "service": "Техқызмет қажет",
+        "issue": "Бұзылған"
+      },
+      "find": "Картадан табу"
+    },
+    "maintenance": {
+      "last": "Соңғы ТО",
+      "next": "Келесі ТО",
+      "book": "ТО-ға жазылу"
+    },
+    "maintenanceStatus": {
+      "great": "Өте жақсы",
+      "good": "Жақсы",
+      "attention": "Назар қажет"
+    },
+    "actions": {
+      "scanQR": "QR сканерлеу",
+      "nearestStations": "Жақын станциялар",
+      "history": "Операциялар тарихы",
+      "myDocuments": "Менің құжаттарым",
+      "support": "Техқолдау"
+    },
+    "stats": {
+      "kmThisMonth": "Айына км",
+      "co2Saved": "Үнемделген CO₂",
+      "swapsThisMonth": "Айлық ауыстырулар",
+      "ecoScore": "Эко-балл"
+    },
+    "news": {
+      "title": "Жаңалықтар мен акциялар",
+      "empty": "Жаңалықтар жоқ",
+      "cityTag": "{city} қ."
+    },
+    "inProgress": "Дамуда"
   }
 }
