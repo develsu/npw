@@ -17,7 +17,9 @@ const translations = {
     changeNumber: 'Нөмірді өзгерту',
     help: 'Көмек',
     invalidNumber: 'Нөмір қате'
+
     start: 'Бастау'
+
 
   },
   ru: {
@@ -58,7 +60,9 @@ const translations = {
     help: 'Help',
     invalidNumber: 'Invalid number'
 
+
     start: 'Start'
+
 
   }
 };
@@ -101,6 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const otpInputs = document.querySelectorAll('.otp-inputs input');
   const app = document.getElementById('app');
 
+
   setLanguage(currentLang);
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
@@ -115,9 +120,10 @@ document.addEventListener('DOMContentLoaded', () => {
     slideIndex++;
     if (slideIndex >= translations[currentLang].slides.length) {
       onboarding.classList.add('hidden');
-
+      auth.classList.remove('hidden');
       auth.classList.remove('hidden');
       app.classList.remove('hidden');
+
 
     } else {
       updateSlide();
@@ -175,6 +181,11 @@ document.addEventListener('DOMContentLoaded', () => {
 let slideIndex = 0;
 
 let codeSentPhone = '';
+
+
+
+let codeSentPhone = '';
+
 
 
 function updateSlide() {
