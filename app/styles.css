@@ -64,6 +64,7 @@ body {
 
 
 
+
 .btn {
 
 
@@ -84,7 +85,11 @@ body {
 
 .btn:active {
 
+
+.btn:active {
+
 #next-btn:active {
+
 
 
 
@@ -99,6 +104,45 @@ body {
 
 #auth {
   animation: fadeIn 0.5s ease both;
+  padding: 1rem;
+}
+
+#agreements {
+  animation: fadeIn 0.5s ease both;
+  padding: 1rem;
+}
+
+#tariffs {
+  animation: fadeIn 0.5s ease both;
+  padding: 1rem;
+}
+
+.plan-card {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: #ffffff;
+}
+
+.plan-card h3 {
+  margin-top: 0;
+}
+
+.plan-card .price {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.plan-card ul {
+  padding-left: 1.25rem;
+
+
+  padding: 1rem;
+}
+
+#auth {
+  animation: fadeIn 0.5s ease both;
 
   padding: 1rem;
 }
@@ -106,6 +150,7 @@ body {
 #agreements {
   animation: fadeIn 0.5s ease both;
   padding: 1rem;
+
 }
 
 .agreement {
@@ -136,7 +181,6 @@ header {
 }
 
 
-
 input[type="tel"] {
   width: 100%;
   padding: 0.5rem 1rem;
@@ -162,7 +206,6 @@ input[type="tel"] {
   border-radius: 8px;
 }
 
-
 @keyframes load {
   from { width: 0; }
   to { width: 100%; }
@@ -177,3 +220,43 @@ input[type="tel"] {
   from { opacity: 0; }
   to { opacity: 1; }
 }
+
+
+#registration {
+  animation: fadeIn 0.5s ease both;
+  padding: 1rem;
+}
+
+.city-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.city-btn {
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.city-btn.selected {
+  border-color: #0066cc;
+  background: #e6f0ff;
+}
+
+#reg-form label {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+#reg-form input {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-top: 0.25rem;
+}
+
