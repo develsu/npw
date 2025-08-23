@@ -32,6 +32,7 @@ import {
     People as PeopleIcon,
     EvStation as StationIcon,
     Battery90 as BatteryIcon,
+    LocationCity as CityIcon,
     Analytics as AnalyticsIcon,
     Settings as SettingsIcon,
     AccountBalance as FinanceIcon,
@@ -179,15 +180,21 @@ const CustomSidebar = ({ open, onClose }) => {
             resource: 'users',
             roles: ['super_admin', 'regional_manager', 'city_manager', 'support']
         },
-        { 
-            name: 'Станции', 
-            icon: <StationIcon />, 
+        {
+            name: 'Станции',
+            icon: <StationIcon />,
             resource: 'stations',
             roles: ['super_admin', 'regional_manager', 'city_manager', 'technical']
         },
-        { 
-            name: 'Батареи', 
-            icon: <BatteryIcon />, 
+        {
+            name: 'Города',
+            icon: <CityIcon />,
+            resource: 'cities',
+            roles: ['super_admin', 'regional_manager']
+        },
+        {
+            name: 'Батареи',
+            icon: <BatteryIcon />,
             resource: 'batteries',
             roles: ['super_admin', 'regional_manager', 'city_manager', 'technical']
         },

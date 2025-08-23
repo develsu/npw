@@ -16,6 +16,10 @@ import dataProvider from './dataProvider';
 import { UserList, UserEdit, UserShow, UserCreate } from './resources/users';
 import { StationList, StationEdit, StationShow, StationCreate } from './resources/stations';
 import { BatteryList, BatteryEdit, BatteryShow } from './resources/batteries';
+import { ExchangeList, ExchangeShow } from './resources/exchanges';
+import { TariffList, TariffEdit, TariffShow, TariffCreate } from './resources/tariffs';
+import { TripList, TripShow } from './resources/trips';
+import { CityList, CityEdit, CityShow, CityCreate } from './resources/cities';
 
 // Дополнительные страницы
 import Analytics from './components/Analytics';
@@ -117,6 +121,56 @@ const i18nProvider = polyglotI18nProvider(() => ({
                 lastMaintenance: 'Последнее ТО',
             },
         },
+        exchanges: {
+            name: 'Обмен |||| Обмены',
+            fields: {
+                id: 'ID',
+                user_id: 'Пользователь',
+                station_id: 'Станция',
+                old_battery_id: 'Старая батарея',
+                new_battery_id: 'Новая батарея',
+                created_at: 'Дата обмена',
+            },
+        },
+        tariffs: {
+            name: 'Тариф |||| Тарифы',
+            fields: {
+                id: 'ID',
+                name: 'Название',
+                description: 'Описание',
+                price: 'Цена',
+                duration_days: 'Длительность (дни)',
+                max_exchanges_per_day: 'Макс. обменов в день',
+                is_active: 'Активный',
+                created_at: 'Создан',
+                updated_at: 'Обновлен',
+            },
+        },
+        trips: {
+            name: 'Поездка |||| Поездки',
+            fields: {
+                id: 'ID',
+                user_id: 'Пользователь',
+                distance_km: 'Расстояние (км)',
+                duration_min: 'Время (мин)',
+                start_time: 'Начало',
+                end_time: 'Конец',
+            },
+        },
+        cities: {
+            name: 'Город |||| Города',
+            fields: {
+                id: 'ID',
+                name_ru: 'Название (RU)',
+                name_kz: 'Название (KZ)',
+                name_en: 'Название (EN)',
+                timezone: 'Часовой пояс',
+                'coordinates.lat': 'Широта',
+                'coordinates.lng': 'Долгота',
+                created_at: 'Создан',
+                updated_at: 'Обновлен',
+            },
+        },
     },
 }), 'ru');
 
@@ -186,6 +240,30 @@ const App = () => {
                     list={BatteryList}
                     edit={BatteryEdit}
                     show={BatteryShow}
+                />
+                <Resource
+                    name="exchanges"
+                    list={ExchangeList}
+                    show={ExchangeShow}
+                />
+                <Resource
+                    name="tariffs"
+                    list={TariffList}
+                    edit={TariffEdit}
+                    show={TariffShow}
+                    create={TariffCreate}
+                />
+                <Resource
+                    name="trips"
+                    list={TripList}
+                    show={TripShow}
+                />
+                <Resource
+                    name="cities"
+                    list={CityList}
+                    edit={CityEdit}
+                    show={CityShow}
+                    create={CityCreate}
                 />
 
                 {/* Дополнительные маршруты */}
