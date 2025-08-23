@@ -1,0 +1,109 @@
+.auth-otp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.auth-otp__inputs {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.auth-otp__input {
+  width: 2rem;
+  height: 2.5rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.auth-otp__input:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.auth-otp__controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.auth-otp__resend {
+  background: none;
+  border: none;
+  color: var(--primary);
+  cursor: pointer;
+}
+
+.auth-otp__resend:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.auth-otp__resend.loading {
+  color: transparent;
+  position: relative;
+}
+
+.auth-otp__resend.loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  margin: -8px;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.auth-otp__resend:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.auth-otp__confirm {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.auth-otp__confirm:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.auth-otp__confirm.loading {
+  color: transparent;
+  position: relative;
+}
+
+.auth-otp__confirm.loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  margin: -8px;
+  border: 2px solid #fff;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.auth-otp__confirm:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.auth-otp__timer {
+  font-size: 0.9rem;
+}

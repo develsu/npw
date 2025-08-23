@@ -15,7 +15,25 @@
     "phone": "Phone",
     "password": "Password",
     "login": "Log in",
-    "logout": "Log out"
+    "logout": "Log out",
+    "getCode": "Get code",
+    "phonePlaceholder": "+7 000 000 00 00",
+    "smsHelp": "Problems receiving SMS?",
+    "otp": {
+      "title": "Enter code",
+      "sentTo": "Code sent to {phone}",
+      "confirm": "Confirm",
+      "resend": "Resend code",
+      "resendIn": "Resend in {s}s",
+      "digit": "Digit {n}"
+    },
+    "errors": {
+      "invalidPhone": "Invalid phone number",
+      "smsLimit": "SMS limit reached. Try later.",
+      "blocked": "Temporarily blocked. Try later.",
+      "invalidCode": "Wrong code",
+      "attempts": "Too many attempts. Try again in 5 minutes."
+    }
   },
   "onboarding": {
     "slide1": {

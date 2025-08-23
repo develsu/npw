@@ -1,7 +1,9 @@
 import { t } from './utils/i18n.js';
-import { formatPhoneKZ, formatMoneyKZT } from './utils/format.js';
+import { formatMoneyKZT } from './utils/format.js';
 import Splash from './routes/splash.js';
 import Onboarding from './routes/onboarding.js';
+import AuthPhone from './routes/auth/phone.js';
+import AuthOtp from './routes/auth/otp.js';
 
 let headerEl;
 let current = 'splash';
@@ -9,25 +11,8 @@ let current = 'splash';
 const routes = {
   splash: Splash,
   onboarding: Onboarding,
-  auth() {
-    const div = document.createElement('div');
-    const h1 = document.createElement('h1');
-    h1.textContent = t('auth.title');
-    const label = document.createElement('label');
-    label.textContent = t('auth.phone');
-    const input = document.createElement('input');
-    input.type = 'tel';
-    input.placeholder = '+7 000 000 00 00';
-    input.addEventListener('blur', () => {
-      const val = formatPhoneKZ(input.value);
-      if (val) input.value = val;
-    });
-    label.appendChild(input);
-    const btn = document.createElement('button');
-    btn.textContent = t('auth.login');
-    div.append(h1, label, btn);
-    return div;
-  },
+  auth: AuthPhone,
+  'auth/otp': AuthOtp,
   agreements() {
     const div = document.createElement('div');
     const h1 = document.createElement('h1');
