@@ -2,12 +2,17 @@ import { t, onLangChange } from '../../utils/i18n.js';
 import { verifyOtpMock, sendOtpMock } from '../../utils/net.js';
 import Storage from '../../utils/storage.js';
 import Toast from '../../components/ui/toast.js';
+import { isAllAccepted } from '../../utils/agreements.js';
 
 const storage = new Storage('eco');
 const toast = Toast();
 
 function nextRoute() {
-  return storage.get('agreements.accepted', false) ? 'dashboard' : 'agreements';
+  if (!isAllAccepted()) return 'agreements';
+  const profile = storage.get('profile', {});
+  if (!profile?.city) return 'city';
+  if (!profile?.fio) return 'register';
+  return 'dashboard';
 }
 
 export default function AuthOtp() {
