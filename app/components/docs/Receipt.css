@@ -1,0 +1,17 @@
+.receipt-viewer {
+  position: fixed;
+  inset:0;
+  background: rgba(0,0,0,0.8);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:1000;
+}
+.receipt-viewer__box { background:#fff; padding:16px; max-width:480px; width:100%; }
+.receipt-viewer__content img { max-width:100px; margin:4px; }
+.receipt-viewer__controls { display:flex; justify-content:space-between; margin-top:8px; }
+.receipt-viewer__stamp { margin-top:16px; font-weight:bold; text-align:center; }
+@media print {
+  .receipt-viewer { position:static; background:none; display:block; }
+  .receipt-viewer__controls { display:none; }
+}

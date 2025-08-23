@@ -1,6 +1,7 @@
 {
   "common": {
-    "appName": "EcoBike"
+    "appName": "EcoBike",
+    "back": "Артқа"
   },
   "header": {
     "help": "Көмек",
@@ -107,6 +108,49 @@
     "page": "Бет",
     "download": "PDF жүктеу",
     "close": "Жабу"
+  },
+  "documents": {
+    "title": "Құжаттар",
+    "tabs": {
+      "active": "Белсенді",
+      "warranty": "Кепілді",
+      "technical": "Техникалық",
+      "financial": "Қаржылық"
+    },
+    "buttons": {
+      "open": "Ашу",
+      "sign": "Қол қою",
+      "print": "Басып шығару",
+      "download": "Жүктеу",
+      "saveHtml": "HTML сақтау",
+      "close": "Жабу",
+      "clear": "Тазарту",
+      "done": "Дайын"
+    },
+    "viewer": {
+      "searchPlaceholder": "Іздеу...",
+      "next": "Алға",
+      "prev": "Артқа",
+      "toc": "Мазмұны",
+      "noResults": "Нәтиже жоқ"
+    },
+    "status": {
+      "needsSignature": "Қол қою қажет",
+      "signedOn": "Қойылған {date}"
+    },
+    "receipt": {
+      "lastReceipt": "Соңғы чек",
+      "operation": "Операция №",
+      "station": "Станция",
+      "slot": "Слот",
+      "city": "Қала",
+      "plan": "Тариф",
+      "dateTime": "Күн/уақыт",
+      "photosBeforeAfter": "Фото до/кейін",
+      "print": "Басып шығару",
+      "saveHtml": "HTML сақтау",
+      "empty": "Операциялар жоқ"
+    }
   },
   "errors": {
     "offline": "Интернет жоқ",

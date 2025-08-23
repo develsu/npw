@@ -1,0 +1,12 @@
+.signature-pad {
+  position: fixed;
+  inset:0;
+  background: rgba(0,0,0,0.7);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:1000;
+}
+.signature-pad__box { background:#fff; padding:16px; display:flex; flex-direction:column; gap:8px; }
+.signature-pad__controls { display:flex; justify-content:space-between; }
+canvas { border:1px solid #ccc; touch-action:none; }
