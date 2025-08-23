@@ -12,6 +12,7 @@ import History from './routes/history.js';
 import Documents from './routes/documents.js';
 import Support from './routes/support.js';
 import Map from './routes/map.js';
+import QR from './routes/qr.js';
 import { isAllAccepted } from './utils/agreements.js';
 import Storage from './utils/storage.js';
 
@@ -31,7 +32,8 @@ const routes = {
   history: History,
   documents: Documents,
   support: Support,
-  map: Map
+  map: Map,
+  qr: QR
 };
 
 function render(name) {

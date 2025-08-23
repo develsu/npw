@@ -184,4 +184,35 @@
     "ok": "Работает",
     "down": "Не работает"
   }
+,
+  "qr": {
+    "title": "Сканировать QR",
+    "startScan": "Начать сканирование",
+    "scanning": "Сканирование...",
+    "torchOn": "Фонарик",
+    "torchOff": "Фонарик выкл",
+    "uploadImage": "Загрузить изображение",
+    "cameraError": "Камера недоступна",
+    "invalidQr": "Неверный QR",
+    "parseHint": "Наведите камеру на QR станции"
+  },
+  "exchange": {
+    "stationInfoTitle": "Информация о станции",
+    "availableBatteries": "Доступно: {n}",
+    "selectSlot": "Выберите слот",
+    "photoBefore": "Фото до",
+    "photoAfter": "Фото после",
+    "confirmUnlock": "Разблокировать",
+    "unlocking": "Разблокируем...",
+    "takeBattery": "Заберите батарею",
+    "done": "Готово",
+    "finish": "Завершить",
+    "receiptTitle": "Чек операции",
+    "print": "Печать",
+    "saveToHistory": "Сохранить в историю",
+    "saved": "Сохранено",
+    "limitExceeded": "Превышен дневной лимит",
+    "noCharged": "Нет заряженных батарей",
+    "stationDown": "Станция недоступна"
+  }
 }

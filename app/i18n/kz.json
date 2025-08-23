@@ -183,5 +183,37 @@
   "status": {
     "ok": "Жұмыс істеп тұр",
     "down": "Жұмыс істемейді"
+
+  }
+,
+  "qr": {
+    "title": "QR сканері",
+    "startScan": "Сканерлеуді бастау",
+    "scanning": "Сканерлеу...",
+    "torchOn": "Шамды қосу",
+    "torchOff": "Шамды өшіру",
+    "uploadImage": "Сурет жүктеу",
+    "cameraError": "Камера ашылмады",
+    "invalidQr": "Қате QR",
+    "parseHint": "Камераны станция QR-на бағыттаңыз"
+  },
+  "exchange": {
+    "stationInfoTitle": "Станция туралы",
+    "availableBatteries": "Қолжетімді: {n}",
+    "selectSlot": "Слотты таңдаңыз",
+    "photoBefore": "Алдындағы фото",
+    "photoAfter": "Кейінгі фото",
+    "confirmUnlock": "Ашу",
+    "unlocking": "Ашылуда...",
+    "takeBattery": "Батареяны алыңыз",
+    "done": "Дайын",
+    "finish": "Аяқтау",
+    "receiptTitle": "Чек",
+    "print": "Басып шығару",
+    "saveToHistory": "Тарихқа сақтау",
+    "saved": "Сақталды",
+    "limitExceeded": "Күндік лимит асқан",
+    "noCharged": "Зарядталған батарея жоқ",
+    "stationDown": "Станция жұмыс істемейді"
   }
 }

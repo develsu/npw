@@ -1,0 +1,3 @@
+.qr-screen{display:flex;flex-direction:column;height:calc(100vh - 56px);}
+.qr-screen h2{margin:0;padding:1rem;}
+.qr-content{flex:1;position:relative;}
