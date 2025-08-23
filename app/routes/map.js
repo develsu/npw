@@ -1,8 +1,8 @@
 import { t, onLangChange } from '../utils/i18n.js';
 import Storage from '../utils/storage.js';
 import { distanceKm } from '../utils/geo.js';
-import cities from '../data/cities.json' assert { type: 'json' };
-import stations from '../data/stations.json' assert { type: 'json' };
+import cities from '../data/cities.js';
+import stations from '../data/stations.js';
 
 const storage = new Storage('eco');
 

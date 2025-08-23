@@ -1,7 +1,7 @@
 import { t, onLangChange } from '../utils/i18n.js';
 import Storage from '../utils/storage.js';
 import { nearestCity } from '../utils/geo.js';
-import cities from '../data/cities.json' assert { type: 'json' };
+import cities from '../data/cities.js';
 
 const storage = new Storage('eco');
 
