@@ -60,7 +60,15 @@ body {
   margin-bottom: 0.5rem;
 }
 
+
+
+
+
+
 .btn {
+
+
+
   margin-top: 2rem;
   padding: 0.75rem 2rem;
   border: none;
@@ -71,12 +79,26 @@ body {
   transition: background 0.3s;
 }
 
+
 .btn:active {
+
+
+.btn:active {
+
+
+.btn:active {
+
+#next-btn:active {
+
+
+
+
   background: #0059b3;
 }
 
 #app {
   animation: fadeIn 0.5s ease both;
+
   padding: 1rem;
 }
 
@@ -114,6 +136,21 @@ body {
 
 .plan-card ul {
   padding-left: 1.25rem;
+
+
+  padding: 1rem;
+}
+
+#auth {
+  animation: fadeIn 0.5s ease both;
+
+  padding: 1rem;
+}
+
+#agreements {
+  animation: fadeIn 0.5s ease both;
+  padding: 1rem;
+
 }
 
 .agreement {
@@ -142,6 +179,7 @@ header {
 .lang-switcher button {
   margin-left: 0.5rem;
 }
+
 
 input[type="tel"] {
   width: 100%;
@@ -183,6 +221,7 @@ input[type="tel"] {
   to { opacity: 1; }
 }
 
+
 #registration {
   animation: fadeIn 0.5s ease both;
   padding: 1rem;
@@ -220,3 +259,4 @@ input[type="tel"] {
   border-radius: 8px;
   margin-top: 0.25rem;
 }
+
