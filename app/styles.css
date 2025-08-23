@@ -1,0 +1,14 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 1rem;
+}
+
+header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.lang-switcher button {
+  margin-left: 0.5rem;
+}
