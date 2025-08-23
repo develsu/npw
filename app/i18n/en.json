@@ -168,5 +168,20 @@
       "cityTag": "{city}"
     },
     "inProgress": "Under construction"
+  },
+  "map": {
+    "title": "Station Map",
+    "myLocation": "My location",
+    "onlyAvailable": "Only available",
+    "distanceKm": "Distance: {km} km",
+    "etaWalk": "Walk: {min} min",
+    "etaBike": "Bike: {min} min",
+    "route": "Route",
+    "offlineHint": "Geolocation unavailable",
+    "chargedSlots": "Charged: {c} / Slots: {s}"
+  },
+  "status": {
+    "ok": "Operational",
+    "down": "Down"
   }
 }
