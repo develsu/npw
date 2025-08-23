@@ -46,8 +46,8 @@ export default function Documents(){
       const lastCard=document.createElement('div');
       lastCard.className='doc-card';
       const title=document.createElement('h3');title.textContent=t('documents.receipt.lastReceipt');
-      const openBtn=document.createElement('button');openBtn.textContent=t('documents.buttons.open');openBtn.addEventListener('click',()=>Receipt.open());
-      const printBtn=document.createElement('button');printBtn.textContent=t('documents.buttons.print');printBtn.addEventListener('click',()=>{Receipt.open(); setTimeout(()=>window.print(),500);});
+      const openBtn=document.createElement('button');openBtn.dataset.testid='openDocument';openBtn.textContent=t('documents.buttons.open');openBtn.addEventListener('click',()=>Receipt.open());
+      const printBtn=document.createElement('button');printBtn.dataset.testid='print';printBtn.textContent=t('documents.buttons.print');printBtn.addEventListener('click',()=>{Receipt.open(); setTimeout(()=>window.print(),500);});
       lastCard.append(title, openBtn, printBtn);
       listWrap.appendChild(lastCard);
     }
@@ -62,17 +62,17 @@ export default function Documents(){
       else if(sig.signed) status.textContent=t('documents.status.signedOn',{date:new Date(sig.tsISO).toLocaleDateString()});
       card.appendChild(status);
       const controls=document.createElement('div');controls.className='doc-controls';
-      const openBtn=document.createElement('button');openBtn.textContent=t('documents.buttons.open');openBtn.addEventListener('click',()=>{
+      const openBtn=document.createElement('button');openBtn.dataset.testid='openDocument';openBtn.textContent=t('documents.buttons.open');openBtn.addEventListener('click',()=>{
         HtmlViewer.open({ title: doc.title, src: `docs/html/${lang}/${doc.file}`, signature: isSigned(doc.id) });
       });
       controls.appendChild(openBtn);
       if(doc.requiresSign && !sig.signed){
-        const signBtn=document.createElement('button');signBtn.textContent=t('documents.buttons.sign');signBtn.addEventListener('click',()=>{
+        const signBtn=document.createElement('button');signBtn.dataset.testid='signDocument';signBtn.textContent=t('documents.buttons.sign');signBtn.addEventListener('click',()=>{
           SignaturePad.open(dataURL=>{ const tsISO=new Date().toISOString(); markSigned(doc.id,dataURL,tsISO,lang); renderList(); });
         });
         controls.appendChild(signBtn);
       }
-      const printBtn=document.createElement('button');printBtn.textContent=t('documents.buttons.print');printBtn.addEventListener('click',()=>{
+      const printBtn=document.createElement('button');printBtn.dataset.testid='print';printBtn.textContent=t('documents.buttons.print');printBtn.addEventListener('click',()=>{
         HtmlViewer.open({ title: doc.title, src: `docs/html/${lang}/${doc.file}`, signature: isSigned(doc.id), onClosed: null });
         setTimeout(()=>window.print(),500);
       });

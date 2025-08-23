@@ -40,9 +40,11 @@ export default function Map() {
   top.className = 'map-top';
   const title = document.createElement('h2');
   const locBtn = document.createElement('button');
+  locBtn.dataset.testid = 'myLocation';
   const availLabel = document.createElement('label');
   const availInput = document.createElement('input');
   availInput.type = 'checkbox';
+  availInput.dataset.testid = 'onlyAvailable';
   const availSpan = document.createElement('span');
   availLabel.append(availInput, availSpan);
   top.append(title, locBtn, availLabel);

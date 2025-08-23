@@ -16,6 +16,7 @@ export default function Dashboard() {
 
   const offlineBanner = document.createElement('div');
   offlineBanner.className = 'offline-banner hidden';
+  offlineBanner.dataset.testid = 'bannerOffline';
   offlineBanner.textContent = t('dashboard.offline');
   el.appendChild(offlineBanner);
 

@@ -14,6 +14,7 @@ export default function ActionGrid() {
   const scan = document.createElement('button');
   scan.type = 'button';
   scan.className = 'action-grid__scan';
+  scan.dataset.testid = 'scan';
   scan.innerHTML = `<img src="assets/icons/qr.svg" alt=""/>${t('dashboard.actions.scanQR')}`;
   scan.addEventListener('click', () => { location.hash = '#/qr'; });
   wrap.appendChild(scan);
