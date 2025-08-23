@@ -43,6 +43,7 @@ export default function PlanCard(plan, onSelect) {
   const choose = document.createElement('button');
   choose.textContent = t('plans.choose');
   choose.addEventListener('click', () => onSelect && onSelect());
+  choose.dataset.testid = 'plan' + plan.id;
   btnRow.appendChild(choose);
 
   const details = document.createElement('button');

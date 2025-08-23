@@ -4,6 +4,28 @@ import { initRouter, rerender } from './router.js';
 import Header from './components/ui/Header.js';
 import { flushQueue } from './utils/offline.js';
 
+// QA hooks
+function openDB() {
+  return new Promise((resolve, reject) => {
+    const req = indexedDB.open('eco-offline', 1);
+    req.onupgradeneeded = () => {
+      req.result.createObjectStore('swapReports', { autoIncrement: true });
+    };
+    req.onerror = () => reject(req.error);
+    req.onsuccess = () => resolve(req.result);
+  });
+}
+
+window.__qa = {
+  set(k, v) { localStorage.setItem(k, JSON.stringify(v)); },
+  get(k) { try { return JSON.parse(localStorage.getItem(k)); } catch (e) { return null; } },
+  clear() { localStorage.clear(); },
+  goto(hash) { location.hash = hash; },
+  qrScan(text) { window.dispatchEvent(new CustomEvent('qa:qr', { detail: { text } })); },
+  async listQueue() { const db = await openDB(); const tx = db.transaction('swapReports'); const store = tx.objectStore('swapReports'); return store.getAll(); },
+  flushQueue
+};
+
 function showUpdateToast() {
   const toast = document.createElement('div');
   toast.className = 'toast';
