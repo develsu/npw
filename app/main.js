@@ -125,6 +125,7 @@ const translations = {
       }
     ]
 
+
     ]
 
     invalidNumber: 'Нөмір қате'
@@ -264,6 +265,7 @@ const translations = {
 
 
 
+
   },
   en: {
     greeting: 'Hello, EcoBike!',
@@ -390,12 +392,14 @@ const translations = {
       }
     ]
 
+
     ]
 
     invalidNumber: 'Invalid number'
 
 
     start: 'Start'
+
 
 
 
@@ -443,9 +447,11 @@ function setLanguage(lang) {
   updateAgreementsText();
 
 
+
   document.getElementById('agreements-title').textContent = t.agreementsTitle;
   document.getElementById('agreements-continue').textContent = t.continue;
   updateAgreementsText();
+
 
 
   updateCodeSentText();
@@ -479,7 +485,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const closeTariffsBtn = document.getElementById('close-tariffs');
   const appMain = document.querySelector('#app main');
 
+
+
   const app = document.getElementById('app');
+
 
 
 
@@ -503,7 +512,6 @@ document.addEventListener('DOMContentLoaded', () => {
       updateSlide();
     }
   });
-
 
   phoneInput.addEventListener('input', maskPhoneInput);
 
@@ -626,10 +634,12 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
+
   document.getElementById('agreements-continue').addEventListener('click', () => {
     agreements.classList.add('hidden');
     app.classList.remove('hidden');
   });
+
 
 
 
@@ -639,6 +649,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 let slideIndex = 0;
+let codeSentPhone = '';
+let selectedCity = '';
+
 
 let codeSentPhone = '';
 let selectedCity = '';
@@ -652,6 +665,7 @@ let codeSentPhone = '';
 
 
 let codeSentPhone = '';
+
 
 
 
