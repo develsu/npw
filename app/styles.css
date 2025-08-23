@@ -61,6 +61,11 @@ body {
 }
 
 .btn {
+
+
+.btn {
+
+
   margin-top: 2rem;
   padding: 0.75rem 2rem;
   border: none;
@@ -71,17 +76,27 @@ body {
   transition: background 0.3s;
 }
 
+
 .btn:active {
+
+
+.btn:active {
+
+#next-btn:active {
+
+
   background: #0059b3;
 }
 
 #app {
   animation: fadeIn 0.5s ease both;
+
   padding: 1rem;
 }
 
 #auth {
   animation: fadeIn 0.5s ease both;
+
   padding: 1rem;
 }
 
@@ -98,6 +113,7 @@ header {
 .lang-switcher button {
   margin-left: 0.5rem;
 }
+
 
 input[type="tel"] {
   width: 100%;
@@ -123,6 +139,7 @@ input[type="tel"] {
   border: 1px solid #ccc;
   border-radius: 8px;
 }
+
 
 @keyframes load {
   from { width: 0; }
