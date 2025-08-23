@@ -1,0 +1,30 @@
+{
+  "sidebar": {
+    "title": "Admin",
+    "dashboard": "Dashboard",
+    "cities": "Cities",
+    "stations": "Stations",
+    "users": "Users",
+    "plans": "Plans",
+    "ops": "Operations",
+    "audit": "Audit",
+    "settings": "Settings"
+  },
+  "actions": {
+    "create": "Create",
+    "logout": "Logout"
+  },
+  "forms": {
+    "name": "Name",
+    "phone": "Phone"
+  },
+  "cities": {"title": "Cities"},
+  "stations": {"title": "Stations", "pick": "Pick on map"},
+  "users": {"title": "Users", "status": "Status", "blocked": "Blocked"},
+  "plans": {"title": "Plans", "price": "Price", "limit": "Limit"},
+  "ops": {"title": "Operations", "status": "Status"},
+  "audit": {"title": "Audit", "action": "Action"},
+  "settings": {"title": "Settings"},
+  "login": {"signIn": "Sign in", "invalid": "Invalid"},
+  "errors": {"forbidden": "Forbidden"}
+}
