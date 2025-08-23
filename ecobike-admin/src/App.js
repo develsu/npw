@@ -21,6 +21,7 @@ import { TariffList, TariffEdit, TariffShow, TariffCreate } from './resources/ta
 import { TripList, TripShow } from './resources/trips';
 import { CityList, CityEdit, CityShow, CityCreate } from './resources/cities';
 
+
 // Дополнительные страницы
 import Analytics from './components/Analytics';
 import Leasing from './components/Leasing';
@@ -265,6 +266,7 @@ const App = () => {
                     show={CityShow}
                     create={CityCreate}
                 />
+
 
                 {/* Дополнительные маршруты */}
                 <CustomRoutes>
