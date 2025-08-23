@@ -1,5 +1,36 @@
 {
-  "common": {"appName": "EcoBike", "language": "Language"},
-  "auth": {"login": "Log in", "logout": "Log out"},
-  "errors": {"offline": "No internet connection"}
+  "common": {
+    "appName": "EcoBike"
+  },
+  "header": {
+    "help": "Help",
+    "language": "Language"
+  },
+  "auth": {
+    "title": "Sign In",
+    "phone": "Phone",
+    "password": "Password",
+    "login": "Log in",
+    "logout": "Log out"
+  },
+  "onboarding": {
+    "welcome": "Welcome to EcoBike!",
+    "start": "Start"
+  },
+  "agreements": {
+    "title": "Agreements",
+    "accept": "Accept"
+  },
+  "cities": {
+    "choose": "Select your city"
+  },
+  "errors": {
+    "offline": "No internet connection",
+    "required": "This field is required"
+  },
+  "buttons": {
+    "next": "Next",
+    "back": "Back",
+    "ok": "OK"
+  }
 }

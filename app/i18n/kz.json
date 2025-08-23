@@ -1,5 +1,36 @@
 {
-  "common": {"appName": "EcoBike", "language": "Тіл"},
-  "auth": {"login": "Кіру", "logout": "Шығу"},
-  "errors": {"offline": "Интернет жоқ"}
+  "common": {
+    "appName": "EcoBike"
+  },
+  "header": {
+    "help": "Көмек",
+    "language": "Тіл"
+  },
+  "auth": {
+    "title": "Кіру",
+    "phone": "Телефон",
+    "password": "Құпия сөз",
+    "login": "Кіру",
+    "logout": "Шығу"
+  },
+  "onboarding": {
+    "welcome": "EcoBike-ке қош келдіңіз!",
+    "start": "Бастау"
+  },
+  "agreements": {
+    "title": "Келісімдер",
+    "accept": "Қабылдау"
+  },
+  "cities": {
+    "choose": "Қалаңызды таңдаңыз"
+  },
+  "errors": {
+    "offline": "Интернет жоқ",
+    "required": "Бұл өріс қажет"
+  },
+  "buttons": {
+    "next": "Келесі",
+    "back": "Артқа",
+    "ok": "ОК"
+  }
 }
