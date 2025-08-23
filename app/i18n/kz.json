@@ -259,5 +259,16 @@
     "limitExceeded": "Күндік лимит асқан",
     "noCharged": "Зарядталған батарея жоқ",
     "stationDown": "Станция жұмыс істемейді"
+  },
+  "integrations": {
+    "pushPermissionTitle": "Хабарламаларды қосу",
+    "pushPermissionBody": "Маңызды жаңартулар үшін қолданамыз",
+    "enablePush": "Push қосу",
+    "enabled": "Push қосылды",
+    "denied": "Push рұқсат етілмеді",
+    "paymentInit": "Төлем ашылуда...",
+    "paymentWaiting": "Төлем күтілуде...",
+    "paymentPaid": "Төлем сәтті",
+    "paymentFailed": "Төлем орындалмады"
   }
 }
