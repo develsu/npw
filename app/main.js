@@ -1,3 +1,18 @@
+import { detectLanguage, setLanguage } from './translations.js';
+import { populateCitySelect } from './cities.js';
+import { registerSW } from './register-sw.js';
+
+document.addEventListener('DOMContentLoaded', () => {
+  const lang = detectLanguage();
+  setLanguage(lang);
+
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
+  });
+
+  populateCitySelect(document.getElementById('city'));
+  registerSW();
+
 const translations = {
   kz: { greeting: 'Сәлем, EcoBike!', cityLabel: 'Қаласыңызды таңдаңыз' },
   ru: { greeting: 'Привет, EcoBike!', cityLabel: 'Выберите ваш город' },
@@ -28,4 +43,5 @@ document.addEventListener('DOMContentLoaded', () => {
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('service-worker.js');
   }
+
 });
