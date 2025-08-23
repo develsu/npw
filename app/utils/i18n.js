@@ -1,4 +1,5 @@
 import Storage from './storage.js';
+import { loadJson } from './json.js';
 
 const storage = new Storage('eco');
 const SUPPORTED = ['kz', 'ru', 'en'];
@@ -16,8 +17,8 @@ function interpolate(str, params) {
 }
 
 async function load(lang) {
-  const res = await fetch(`./i18n/${lang}.json`);
-  dict = await res.json();
+  const url = new URL(`../i18n/${lang}.json`, import.meta.url);
+  dict = await loadJson(url.href);
   currentLang = lang;
   storage.set('lang', lang);
   document.documentElement.lang = lang;

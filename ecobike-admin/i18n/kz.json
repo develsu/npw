@@ -1,0 +1,30 @@
+{
+  "sidebar": {
+    "title": "Админка",
+    "dashboard": "Басты",
+    "cities": "Қалалар",
+    "stations": "Станциялар",
+    "users": "Пайдаланушылар",
+    "plans": "Тарифтер",
+    "ops": "Операциялар",
+    "audit": "Аудит",
+    "settings": "Баптау"
+  },
+  "actions": {
+    "create": "Қосу",
+    "logout": "Шығу"
+  },
+  "forms": {
+    "name": "Атауы",
+    "phone": "Телефон"
+  },
+  "cities": {"title": "Қалалар"},
+  "stations": {"title": "Станциялар", "pick": "Картадан таңдау"},
+  "users": {"title": "Пайдаланушылар", "status": "Статус", "blocked": "Бұғатталған"},
+  "plans": {"title": "Тарифтер", "price": "Баға", "limit": "Күндік лимит"},
+  "ops": {"title": "Операциялар", "status": "Статус"},
+  "audit": {"title": "Аудит", "action": "Әрекет"},
+  "settings": {"title": "Баптаулар"},
+  "login": {"signIn": "Кіру", "invalid": "Қате"},
+  "errors": {"forbidden": "Рұқсат жоқ"}
+}

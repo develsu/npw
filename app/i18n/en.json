@@ -334,5 +334,8 @@
     "paid": "Payment accepted",
     "failed": "Payment failed",
     "openWindowHint": "Finish payment in opened window"
+  },
+  "adminMenu": {
+    "title": "Admin"
   }
 }

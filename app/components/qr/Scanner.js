@@ -119,6 +119,11 @@ export default function Scanner({ onResult }) {
 
   startLive();
 
+  window.addEventListener('qa:qr', e => {
+    const text = e.detail && e.detail.text;
+    if (text) onResult(text);
+  });
+
   function destroy() {
     if (window.Quagga) {
       try { Quagga.stop(); } catch (e) {}

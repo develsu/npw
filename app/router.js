@@ -12,6 +12,7 @@ import Plans from './routes/plans.js';
 import Billing from './routes/billing.js';
 import { isAllAccepted } from './utils/agreements.js';
 import Storage from './utils/storage.js';
+import { t, onLangChange } from './utils/i18n.js';
 
 let headerEl;
 let current = 'splash';
@@ -62,6 +63,19 @@ function handleRoute() {
 
 export function initRouter(header) {
   headerEl = header;
+  const admin = JSON.parse(localStorage.getItem('eco.admin') || '{}');
+  let adminLink;
+  if (admin.role) {
+    adminLink = document.createElement('a');
+    adminLink.href = '../ecobike-admin/index.html';
+    adminLink.textContent = t('adminMenu.title');
+    adminLink.className = 'header__admin';
+    adminLink.target = '_blank';
+    headerEl.appendChild(adminLink);
+    onLangChange(() => {
+      adminLink.textContent = t('adminMenu.title');
+    });
+  }
   window.addEventListener('hashchange', handleRoute);
   handleRoute();
 }

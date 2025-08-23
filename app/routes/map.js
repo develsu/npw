@@ -1,8 +1,7 @@
 import { t, onLangChange } from '../utils/i18n.js';
 import Storage from '../utils/storage.js';
 import { distanceKm } from '../utils/geo.js';
-import cities from '../data/cities.js';
-import stations from '../data/stations.js';
+import { loadJson } from '../utils/json.js';
 
 const storage = new Storage('eco');
 
@@ -41,9 +40,11 @@ export default function Map() {
   top.className = 'map-top';
   const title = document.createElement('h2');
   const locBtn = document.createElement('button');
+  locBtn.dataset.testid = 'myLocation';
   const availLabel = document.createElement('label');
   const availInput = document.createElement('input');
   availInput.type = 'checkbox';
+  availInput.dataset.testid = 'onlyAvailable';
   const availSpan = document.createElement('span');
   availLabel.append(availInput, availSpan);
   top.append(title, locBtn, availLabel);
@@ -59,6 +60,8 @@ export default function Map() {
   let myMarker = null;
   let accuracyCircle = null;
   let onlyAvail = false;
+  let cities = [];
+  let stations = [];
 
   function markerColor(st) {
     if (st.status === 'down') return '#777';
@@ -180,7 +183,18 @@ export default function Map() {
   onLangChange(updateTexts);
   updateTexts();
 
-  loadLeaflet().then(initMap);
+  async function bootstrap() {
+    const [c, s] = await Promise.all([
+      loadJson(new URL('../data/cities.json', import.meta.url).href),
+      loadJson(new URL('../data/stations.json', import.meta.url).href)
+    ]);
+    cities = c;
+    stations = s;
+    await loadLeaflet();
+    initMap();
+  }
+
+  bootstrap();
 
   return el;
 }

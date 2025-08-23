@@ -1,0 +1,30 @@
+{
+  "sidebar": {
+    "title": "Админка",
+    "dashboard": "Главная",
+    "cities": "Города",
+    "stations": "Станции",
+    "users": "Пользователи",
+    "plans": "Тарифы",
+    "ops": "Операции",
+    "audit": "Аудит",
+    "settings": "Настройки"
+  },
+  "actions": {
+    "create": "Создать",
+    "logout": "Выйти"
+  },
+  "forms": {
+    "name": "Название",
+    "phone": "Телефон"
+  },
+  "cities": {"title": "Города"},
+  "stations": {"title": "Станции", "pick": "Выбрать на карте"},
+  "users": {"title": "Пользователи", "status": "Статус", "blocked": "Заблокирован"},
+  "plans": {"title": "Тарифы", "price": "Цена", "limit": "Лимит"},
+  "ops": {"title": "Операции", "status": "Статус"},
+  "audit": {"title": "Аудит", "action": "Действие"},
+  "settings": {"title": "Настройки"},
+  "login": {"signIn": "Войти", "invalid": "Ошибка"},
+  "errors": {"forbidden": "Доступ запрещён"}
+}

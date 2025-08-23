@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "deploy": "firebase deploy",
+    "deploy:app": "firebase deploy --only hosting:APP_SITE_ID",
+    "deploy:admin": "firebase deploy --only hosting:ADMIN_SITE_ID",
+    "test": "echo \"No tests\""
+  }
+}
