@@ -42,7 +42,11 @@ export default function Register() {
   kycWrap.className = 'register-screen__kyc';
   const idFront = Uploader();
   const idBack = Uploader();
+
+  const selfie = Uploader({ capture: 'user' });
+
   const selfie = Uploader({ capture: 'environment' });
+
   kycWrap.append(idFront, idBack, selfie);
 
   const submit = document.createElement('button');
