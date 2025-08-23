@@ -1,0 +1,71 @@
+.onboarding {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.onboarding__slides {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+.onboarding__slide {
+  min-width: 100%;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.onboarding__tariffs {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.onboarding__tariffs div {
+  border: 1px solid #ccc;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+}
+
+.onboarding__controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.onboarding__dots {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.onboarding__dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ccc;
+}
+
+.onboarding__dots .active {
+  background: var(--primary);
+}
+
+.onboarding__btn {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.onboarding__btn:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}

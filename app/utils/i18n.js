@@ -1,6 +1,6 @@
 import Storage from './storage.js';
 
-const storage = new Storage('ecobike');
+const storage = new Storage('eco');
 const SUPPORTED = ['kz', 'ru', 'en'];
 let currentLang = 'kz';
 let dict = {};

@@ -1,0 +1,38 @@
+.splash-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  gap: 1rem;
+}
+
+.splash-logo {
+  font-size: 2rem;
+  font-weight: bold;
+  animation: splash-pulse 2s infinite;
+}
+
+@keyframes splash-pulse {
+  0%,100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.splash-progress {
+  width: 80%;
+  height: 4px;
+  background: #ddd;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.splash-progress-bar {
+  height: 100%;
+  width: 0;
+  background: var(--primary);
+  transition: width 0.3s ease;
+}
+
+.splash-status {
+  font-size: 0.9rem;
+}

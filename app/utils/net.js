@@ -23,4 +23,24 @@ export function onNetworkChange(handler) {
   window.addEventListener('offline', () => handler(false));
 }
 
-export default { fetchWithTimeout, isOnline, onNetworkChange };
+export async function fetchCities() {
+  await new Promise(r => setTimeout(r, 300));
+  const res = await fetch('./data/cities.json');
+  return res.json();
+}
+
+export async function fetchAgreementsMeta() {
+  await new Promise(r => setTimeout(r, 300));
+  return [
+    { key: 'terms', titleKey: 'agreements.meta.terms' },
+    { key: 'privacy', titleKey: 'agreements.meta.privacy' }
+  ];
+}
+
+export default {
+  fetchWithTimeout,
+  isOnline,
+  onNetworkChange,
+  fetchCities,
+  fetchAgreementsMeta
+};

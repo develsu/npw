@@ -6,6 +6,10 @@
     "help": "Help",
     "language": "Language"
   },
+  "splash": {
+    "loading": "Loading...",
+    "updating": "Updating..."
+  },
   "auth": {
     "title": "Sign In",
     "phone": "Phone",
@@ -14,12 +18,31 @@
     "logout": "Log out"
   },
   "onboarding": {
-    "welcome": "Welcome to EcoBike!",
-    "start": "Start"
+    "slide1": {
+      "title": "Welcome to EcoBike",
+      "text": "Fast battery swap across the city"
+    },
+    "slide2": {
+      "title": "How it works",
+      "text": "Scan → Swap → Ride"
+    },
+    "slide3": {
+      "title": "Choose your plan",
+      "text": "Start / Standard / Enterprise"
+    },
+    "slide4": {
+      "title": "Agreement and documents",
+      "text": "All reports in one app"
+    },
+    "continue": "Continue"
   },
   "agreements": {
     "title": "Agreements",
-    "accept": "Accept"
+    "accept": "Accept",
+    "meta": {
+      "terms": "User Agreement",
+      "privacy": "Privacy Policy"
+    }
   },
   "cities": {
     "choose": "Select your city"
