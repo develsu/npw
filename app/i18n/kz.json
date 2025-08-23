@@ -1,7 +1,11 @@
 {
   "common": {
     "appName": "EcoBike",
-    "back": "Артқа"
+    "back": "Артқа",
+    "online": "Онлайн",
+    "offline": "Офлайн",
+    "updateAvailable": "Жаңарту қолжетімді",
+    "reload": "Қайта жүктеу"
   },
   "header": {
     "help": "Көмек",

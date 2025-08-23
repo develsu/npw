@@ -1,7 +1,11 @@
 {
   "common": {
     "appName": "EcoBike",
-    "back": "Back"
+    "back": "Back",
+    "online": "Online",
+    "offline": "Offline",
+    "updateAvailable": "Update available",
+    "reload": "Reload"
   },
   "header": {
     "help": "Help",
