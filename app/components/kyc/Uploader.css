@@ -1,0 +1,31 @@
+.uploader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.uploader label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.uploader input {
+  padding: 0.5rem;
+}
+
+.uploader input:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.uploader__preview {
+  max-width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.uploader__msg {
+  font-size: 0.85rem;
+  color: #b71c1c;
+}

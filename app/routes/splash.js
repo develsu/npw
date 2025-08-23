@@ -8,6 +8,9 @@ const storage = new Storage('eco');
 function nextRoute() {
   if (storage.get('firstLaunch', true)) return 'onboarding';
   if (!isAllAccepted()) return 'agreements';
+  const profile = storage.get('profile', {});
+  if (!profile?.city) return 'city';
+  if (!profile?.fio) return 'register';
   if (!storage.get('user.auth', false)) return 'auth';
   return 'dashboard';
 }

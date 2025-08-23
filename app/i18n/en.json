@@ -74,6 +74,28 @@
   "cities": {
     "choose": "Select your city"
   },
+  "city": {
+    "title": "Select city",
+    "gps": "Detect by GPS",
+    "confirm": "Next",
+    "detecting": "Detecting..."
+  },
+  "register": {
+    "title": "Registration",
+    "fio": "Full name",
+    "iin": "IIN",
+    "dob": "Date of birth",
+    "email": "Email (optional)",
+    "region": "District",
+    "street": "Street and house",
+    "apt": "Apartment",
+    "idFront": "ID front",
+    "idBack": "ID back",
+    "selfie": "Selfie with ID",
+    "submit": "Finish",
+    "warnings": { "blurry": "Image may be blurry" },
+    "errors": { "photo": "Image too small" }
+  },
   "viewer": {
     "search": "Search",
     "prev": "Prev",
