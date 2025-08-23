@@ -1,0 +1,13 @@
+{
+  "projects": {
+    "default": "APP_SITE_ID"
+  },
+  "targets": {
+    "APP_SITE_ID": {
+      "hosting": {
+        "app": ["APP_SITE_ID"],
+        "admin": ["ADMIN_SITE_ID"]
+      }
+    }
+  }
+}
