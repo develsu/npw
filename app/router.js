@@ -1,27 +1,14 @@
-import { t, getLang } from './utils/i18n.js';
-import { formatDate, formatPhoneKZ, formatMoneyKZT } from './utils/format.js';
+import { t } from './utils/i18n.js';
+import { formatPhoneKZ, formatMoneyKZT } from './utils/format.js';
+import Splash from './routes/splash.js';
+import Onboarding from './routes/onboarding.js';
 
 let headerEl;
 let current = 'splash';
 
 const routes = {
-  splash() {
-    const div = document.createElement('div');
-    div.className = 'splash';
-    div.textContent = t('common.appName');
-    return div;
-  },
-  onboarding() {
-    const div = document.createElement('div');
-    const h1 = document.createElement('h1');
-    h1.textContent = t('onboarding.welcome');
-    const p = document.createElement('p');
-    p.textContent = formatDate(new Date(), getLang());
-    const btn = document.createElement('button');
-    btn.textContent = t('onboarding.start');
-    div.append(h1, p, btn);
-    return div;
-  },
+  splash: Splash,
+  onboarding: Onboarding,
   auth() {
     const div = document.createElement('div');
     const h1 = document.createElement('h1');

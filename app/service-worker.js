@@ -1,14 +1,23 @@
-const CACHE_NAME = 'ecobike-shell-v1';
+const CACHE_NAME = 'ecobike-shell-v2';
 const APP_SHELL = [
   '/',
   '/index.html',
   '/styles.css',
   '/main.js',
   '/router.js',
+  '/routes/splash.js',
+  '/routes/onboarding.js',
+  '/routes/splash.css',
+  '/routes/onboarding.css',
   '/offline.html',
   '/manifest.webmanifest',
   '/icons/icon-192.svg',
-  '/icons/icon-512.svg'
+  '/icons/icon-512.svg',
+  '/assets/illustrations/welcome.svg',
+  '/assets/illustrations/how.svg',
+  '/assets/illustrations/tariffs.svg',
+  '/assets/illustrations/docs.svg',
+  '/data/cities.json'
 ];
 
 self.addEventListener('install', evt => {
