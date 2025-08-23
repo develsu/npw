@@ -1,0 +1,4 @@
+.plans-page{padding:1rem;}
+.plan-grid{display:grid;gap:1rem;}
+@media(min-width:768px){.plan-grid{grid-template-columns:repeat(3,1fr);}}
+.rental-block,.leasing-block{border:1px solid #ccc;border-radius:8px;padding:1rem;margin-top:1.5rem;display:flex;flex-direction:column;gap:.5rem;}

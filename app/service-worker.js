@@ -19,6 +19,7 @@ const APP_SHELL = [
   '/assets/illustrations/docs.svg',
   '/data/cities.json'
 ];
+try { importScripts('./firebase-messaging-sw.js'); } catch (e) {}
 
 self.addEventListener('install', evt => {
   evt.waitUntil(caches.open(CACHE_NAME).then(c => c.addAll(APP_SHELL)));

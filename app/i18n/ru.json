@@ -227,8 +227,7 @@
   "status": {
     "ok": "Работает",
     "down": "Не работает"
-  }
-,
+  },
   "qr": {
     "title": "Сканировать QR",
     "startScan": "Начать сканирование",
@@ -258,5 +257,78 @@
     "limitExceeded": "Превышен дневной лимит",
     "noCharged": "Нет заряженных батарей",
     "stationDown": "Станция недоступна"
+  },
+  "integrations": {
+    "pushPermissionTitle": "Включить уведомления",
+    "pushPermissionBody": "Мы используем их для важных сообщений",
+    "enablePush": "Включить push",
+    "enabled": "Push включён",
+    "denied": "Push запрещён",
+    "paymentInit": "Открываем оплату...",
+    "paymentWaiting": "Ожидание оплаты...",
+    "paymentPaid": "Оплата прошла",
+    "paymentFailed": "Оплата не прошла"
+  },
+  "plans": {
+    "title": "Выберите тариф",
+    "perMonth": "{price}/мес",
+    "perDay": "≈ {price}/день",
+    "choose": "Выбрать",
+    "details": "Подробнее",
+    "included": "Включено",
+    "unlimited": "Безлимит",
+    "start": "Start",
+    "standard": "Standard",
+    "enterprise": "Enterprise",
+    "rental": {
+      "title": "Аренда",
+      "desc": "Недельная аренда велосипеда, включает Start",
+      "pricePerWeek": "{price}/неделя",
+      "selectOneWeek": "Оформить на 1 неделю",
+      "terms": ""
+    },
+    "leasing": {
+      "title": "Лизинг",
+      "weeks": "{w} недель",
+      "selectWeeks": "Выберите срок",
+      "weeklyPrice": "Цена за неделю {price}",
+      "buyout": "Выкуп после срока: {price}",
+      "info": "Доступен выкуп по завершении"
+    },
+    "features": {
+      "swapsPerDay": "{n} замен в день",
+      "stationMaintenance": "ТО на станции (3/мес)",
+      "fieldMaintenance": "Выездное ТО",
+      "gps": "GPS",
+      "analytics": "Аналитика",
+      "support": "Поддержка 9:00–18:00",
+      "manager": "Персональный менеджер",
+      "vipSupport": "Поддержка 24/7"
+    }
+  },
+  "billing": {
+    "title": "Биллинг",
+    "currentPlan": "Текущий план",
+    "daysLeft": "Осталось {days} дн",
+    "usedOf": "{used} из {limit} замен сегодня",
+    "unlimited": "Безлимит",
+    "renew": "Продлить",
+    "upgrade": "Апгрейд",
+    "changeMethod": "Изменить способ",
+    "cancelAutoRenew": "Отмена авто-продления",
+    "pendingPayment": "Ожидание оплаты...",
+    "paid": "Оплата принята",
+    "failed": "Ошибка оплаты",
+    "rentalStatus": "Аренда активна до {date}",
+    "leasingStatus": "Лизинг активен до {date} ({weeks} недель)",
+    "buyout": "Выкуп {price}",
+    "historyLink": "История операций"
+  },
+  "payments": {
+    "creatingSession": "Создание платежа...",
+    "waiting": "Ожидание оплаты...",
+    "paid": "Оплата принята",
+    "failed": "Оплата не прошла",
+    "openWindowHint": "Завершите оплату в открывшемся окне"
   }
 }

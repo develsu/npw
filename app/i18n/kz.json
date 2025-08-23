@@ -227,9 +227,7 @@
   "status": {
     "ok": "Жұмыс істеп тұр",
     "down": "Жұмыс істемейді"
-
-  }
-,
+  },
   "qr": {
     "title": "QR сканері",
     "startScan": "Сканерлеуді бастау",
@@ -259,5 +257,78 @@
     "limitExceeded": "Күндік лимит асқан",
     "noCharged": "Зарядталған батарея жоқ",
     "stationDown": "Станция жұмыс істемейді"
+  },
+  "integrations": {
+    "pushPermissionTitle": "Хабарламаларды қосу",
+    "pushPermissionBody": "Маңызды жаңартулар үшін қолданамыз",
+    "enablePush": "Push қосу",
+    "enabled": "Push қосылды",
+    "denied": "Push рұқсат етілмеді",
+    "paymentInit": "Төлем ашылуда...",
+    "paymentWaiting": "Төлем күтілуде...",
+    "paymentPaid": "Төлем сәтті",
+    "paymentFailed": "Төлем орындалмады"
+  },
+  "plans": {
+    "title": "Тарифті таңдаңыз",
+    "perMonth": "{price}/ай",
+    "perDay": "≈ {price}/күн",
+    "choose": "Таңдау",
+    "details": "Толығырақ",
+    "included": "Қамтылған",
+    "unlimited": "Шектеусіз",
+    "start": "Start",
+    "standard": "Standard",
+    "enterprise": "Enterprise",
+    "rental": {
+      "title": "Жалдау",
+      "desc": "Апталық жалдау, Start жоспары кіреді",
+      "pricePerWeek": "{price}/апта",
+      "selectOneWeek": "1 аптаға жалдау",
+      "terms": ""
+    },
+    "leasing": {
+      "title": "Лизинг",
+      "weeks": "{w} апта",
+      "selectWeeks": "Апталарды таңдаңыз",
+      "weeklyPrice": "Апталық баға {price}",
+      "buyout": "Мерзім соңында сатып алу: {price}",
+      "info": "Мерзім біткенде сатып алуға болады"
+    },
+    "features": {
+      "swapsPerDay": "Күніне {n} ауыстыру",
+      "stationMaintenance": "Станцияда ТО (айына 3 рет)",
+      "fieldMaintenance": "Шақыру бойынша ТО",
+      "gps": "GPS бақылау",
+      "analytics": "Аналитика",
+      "support": "Қолдау 9:00–18:00",
+      "manager": "Жеке менеджер",
+      "vipSupport": "Тәулік бойы қолдау"
+    }
+  },
+  "billing": {
+    "title": "Төлемдер",
+    "currentPlan": "Ағымдағы жоспар",
+    "daysLeft": "Аяқталуына {days} күн",
+    "usedOf": "Бүгін {limit} ішінен {used} ауыстыру",
+    "unlimited": "Шектеусіз",
+    "renew": "Ұзарту",
+    "upgrade": "Жаңарту",
+    "changeMethod": "Әдісті өзгерту",
+    "cancelAutoRenew": "Авто-ұзартуды өшіру",
+    "pendingPayment": "Төлем күтілуде...",
+    "paid": "Төлем қабылданды",
+    "failed": "Төлем қате",
+    "rentalStatus": "Жалдау {date} дейін",
+    "leasingStatus": "Лизинг {date} дейін ({weeks} апта)",
+    "buyout": "Сатып алу {price}",
+    "historyLink": "Операциялар тарихы"
+  },
+  "payments": {
+    "creatingSession": "Төлемді бастау...",
+    "waiting": "Төлем күтілуде...",
+    "paid": "Төлем қабылданды",
+    "failed": "Төлем орындалмады",
+    "openWindowHint": "Ашылған терезеде төлемді аяқтаңыз"
   }
 }

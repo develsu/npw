@@ -1,0 +1,4 @@
+.lease-config{display:flex;flex-direction:column;gap:.5rem;padding:1rem;border:1px solid #ccc;border-radius:8px;}
+.lease-config__range{width:100%;}
+.lease-config__actions{display:flex;gap:.5rem;}
+.lease-config__actions button{flex:1;}
