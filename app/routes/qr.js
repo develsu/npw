@@ -33,13 +33,16 @@ export default function QR() {
   onLangChange(updateTexts);
   updateTexts();
 
+  let scanner = null;
   function startScanner() {
     content.innerHTML = '';
-    const sc = Scanner({ onResult: handleScan });
-    content.appendChild(sc);
+    if (scanner && scanner.destroy) scanner.destroy();
+    scanner = Scanner({ onResult: handleScan });
+    content.appendChild(scanner.el);
   }
 
   async function handleScan(text) {
+    if (scanner && scanner.destroy) scanner.destroy();
     const parsed = parseQr(text);
     if (!parsed) {
       toast.show(t('qr.invalidQr'));
@@ -60,6 +63,13 @@ export default function QR() {
     content.appendChild(wizard);
   }
 
+  function onLeave() {
+    if (location.hash !== '#/qr' && scanner && scanner.destroy) {
+      scanner.destroy();
+      window.removeEventListener('hashchange', onLeave);
+    }
+  }
+  window.addEventListener('hashchange', onLeave);
   startScanner();
   return el;
 }

@@ -47,6 +47,7 @@ export default function Scanner({ onResult }) {
   const toast = Toast();
   let track = null;
   let torch = false;
+  let started = false;
 
   function updateTexts() {
     label.textContent = t('qr.scanning');
@@ -58,6 +59,8 @@ export default function Scanner({ onResult }) {
   updateTexts();
 
   function startLive() {
+    if (started) return;
+    started = true;
     loadQuagga().then(() => {
       Quagga.init({
         inputStream: {
@@ -83,6 +86,7 @@ export default function Scanner({ onResult }) {
       Quagga.onDetected(data => {
         const code = data.codeResult.code;
         Quagga.stop();
+        started = false;
         onResult(code);
       });
     });
@@ -114,5 +118,14 @@ export default function Scanner({ onResult }) {
   });
 
   startLive();
-  return el;
+
+  function destroy() {
+    if (window.Quagga) {
+      try { Quagga.stop(); } catch (e) {}
+    }
+    if (track) { track.stop(); track = null; }
+    started = false;
+  }
+
+  return { el, destroy };
 }

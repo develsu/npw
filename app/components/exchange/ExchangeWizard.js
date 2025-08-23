@@ -1,7 +1,8 @@
 import { t, onLangChange } from '../../utils/i18n.js';
-import { requestUnlockMock } from '../../utils/net.js';
+import { requestUnlockMock, reportSwapMock } from '../../utils/net.js';
 import Storage from '../../utils/storage.js';
 import Toast from '../ui/toast.js';
+import { resizeImageFile } from '../../utils/offline.js';
 
 function loadStyles() {
   if (!document.querySelector('link[href="components/exchange/ExchangeWizard.css"]')) {
@@ -71,12 +72,11 @@ export default function ExchangeWizard({ station, sub }) {
     input.accept = 'image/*';
     input.capture = 'environment';
     const img = document.createElement('img');
-    input.addEventListener('change', () => {
+    input.addEventListener('change', async () => {
       const file = input.files[0];
       if (!file) return;
-      const reader = new FileReader();
-      reader.onload = () => { beforePhoto = reader.result; img.src = beforePhoto; };
-      reader.readAsDataURL(file);
+      beforePhoto = await resizeImageFile(file, 720);
+      img.src = beforePhoto;
     });
     const btn = document.createElement('button');
     btn.textContent = t('buttons.next');
@@ -120,12 +120,11 @@ export default function ExchangeWizard({ station, sub }) {
     input.accept = 'image/*';
     input.capture = 'environment';
     const img = document.createElement('img');
-    input.addEventListener('change', () => {
+    input.addEventListener('change', async () => {
       const file = input.files[0];
       if (!file) return;
-      const reader = new FileReader();
-      reader.onload = () => { afterPhoto = reader.result; img.src = afterPhoto; };
-      reader.readAsDataURL(file);
+      afterPhoto = await resizeImageFile(file, 720);
+      img.src = afterPhoto;
     });
     const btn = document.createElement('button');
     btn.textContent = t('buttons.next');
@@ -134,6 +133,12 @@ export default function ExchangeWizard({ station, sub }) {
   }
 
   function renderReceipt() {
+    reportSwapMock({
+      stationId: station.id,
+      slot,
+      photos: { before: beforePhoto, after: afterPhoto },
+      userId: storage.get('user.id', 'demo')
+    });
     const h = document.createElement('h2');
     h.textContent = t('exchange.receiptTitle');
     const info = document.createElement('div');

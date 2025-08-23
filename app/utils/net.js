@@ -1,4 +1,5 @@
 import Storage from './storage.js';
+import { queueReport } from './offline.js';
 
 export async function fetchWithTimeout(url, options = {}, timeout = 8000, retries = 0) {
   for (let attempt = 0; attempt <= retries; attempt++) {
@@ -132,6 +133,10 @@ export async function requestUnlockMock(stationId, slot) {
 }
 
 export async function reportSwapMock(data) {
+  if (!isOnline()) {
+    await queueReport(data);
+    return { ok: true, queued: true };
+  }
   const delay = 500 + Math.random() * 300;
   await new Promise(r => setTimeout(r, delay));
   const sub = storage.get("subscription");

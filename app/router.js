@@ -1,5 +1,3 @@
-import { t } from './utils/i18n.js';
-import { formatMoneyKZT } from './utils/format.js';
 import Splash from './routes/splash.js';
 import Onboarding from './routes/onboarding.js';
 import AuthPhone from './routes/auth/phone.js';
@@ -9,10 +7,7 @@ import City from './routes/city.js';
 import Register from './routes/register.js';
 import Dashboard from './routes/dashboard.js';
 import History from './routes/history.js';
-import Documents from './routes/documents.js';
 import Support from './routes/support.js';
-import Map from './routes/map.js';
-import QR from './routes/qr.js';
 import Plans from './routes/plans.js';
 import Billing from './routes/billing.js';
 import { isAllAccepted } from './utils/agreements.js';
@@ -23,27 +18,28 @@ let current = 'splash';
 const storage = new Storage('eco');
 
 const routes = {
-  splash: Splash,
-  onboarding: Onboarding,
-  auth: AuthPhone,
-  'auth/otp': AuthOtp,
-  agreements: Agreements,
-  city: City,
-  register: Register,
-  dashboard: Dashboard,
-  history: History,
-  documents: Documents,
-  support: Support,
-  map: Map,
-  qr: QR,
-  plans: Plans,
-  billing: Billing
+  splash: () => Splash,
+  onboarding: () => Onboarding,
+  auth: () => AuthPhone,
+  'auth/otp': () => AuthOtp,
+  agreements: () => Agreements,
+  city: () => City,
+  register: () => Register,
+  dashboard: () => Dashboard,
+  history: () => History,
+  documents: () => import('./routes/documents.js').then(m => m.default),
+  support: () => Support,
+  map: () => import('./routes/map.js').then(m => m.default),
+  qr: () => import('./routes/qr.js').then(m => m.default),
+  plans: () => Plans,
+  billing: () => Billing
 };
 
-function render(name) {
+async function render(name) {
   const view = document.getElementById('view');
   view.innerHTML = '';
-  view.appendChild(routes[name]());
+  const mod = await routes[name]();
+  view.appendChild(mod());
   headerEl.style.display = name === 'splash' ? 'none' : 'flex';
   current = name;
 }
