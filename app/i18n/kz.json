@@ -1,0 +1,5 @@
+{
+  "common": {"appName": "EcoBike", "language": "Тіл"},
+  "auth": {"login": "Кіру", "logout": "Шығу"},
+  "errors": {"offline": "Интернет жоқ"}
+}
