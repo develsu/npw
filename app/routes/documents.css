@@ -1,0 +1,7 @@
+.documents { padding:16px; }
+.doc-tabs { display:flex; gap:8px; margin-bottom:16px; }
+.doc-tab[aria-selected="true"] { font-weight:bold; }
+.doc-list { display:flex; flex-direction:column; gap:12px; }
+.doc-card { border:1px solid #ddd; padding:12px; }
+.doc-controls { display:flex; gap:8px; margin-top:8px; }
+.doc-status { font-size:0.9em; color:#555; margin-top:4px; }

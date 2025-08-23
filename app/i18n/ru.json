@@ -1,6 +1,7 @@
 {
   "common": {
-    "appName": "EcoBike"
+    "appName": "EcoBike",
+    "back": "Назад"
   },
   "header": {
     "help": "Помощь",
@@ -107,6 +108,49 @@
     "page": "Страница",
     "download": "Скачать PDF",
     "close": "Закрыть"
+  },
+  "documents": {
+    "title": "Документы",
+    "tabs": {
+      "active": "Активные",
+      "warranty": "Гарантийные",
+      "technical": "Технические",
+      "financial": "Финансовые"
+    },
+    "buttons": {
+      "open": "Открыть",
+      "sign": "Подписать",
+      "print": "Печать",
+      "download": "Скачать",
+      "saveHtml": "Сохранить как HTML",
+      "close": "Закрыть",
+      "clear": "Очистить",
+      "done": "Готово"
+    },
+    "viewer": {
+      "searchPlaceholder": "Поиск...",
+      "next": "Далее",
+      "prev": "Назад",
+      "toc": "Оглавление",
+      "noResults": "Нет результатов"
+    },
+    "status": {
+      "needsSignature": "Требует подписи",
+      "signedOn": "Подписано {date}"
+    },
+    "receipt": {
+      "lastReceipt": "Последний чек",
+      "operation": "Операция №",
+      "station": "Станция",
+      "slot": "Слот",
+      "city": "Город",
+      "plan": "Тариф",
+      "dateTime": "Дата/время",
+      "photosBeforeAfter": "Фото до/после",
+      "print": "Печать",
+      "saveHtml": "Сохранить как HTML",
+      "empty": "Нет операций"
+    }
   },
   "errors": {
     "offline": "Нет соединения",

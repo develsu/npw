@@ -1,0 +1,24 @@
+.html-viewer {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  flex-direction: column;
+  z-index: 1000;
+}
+.html-viewer__toolbar {
+  background: #fff;
+  padding: 8px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.html-viewer__title { font-weight: bold; flex:1; }
+.html-viewer__body { flex:1; display:flex; overflow:auto; background:#fff; }
+.html-viewer__toc { width:200px; padding:8px; border-right:1px solid #ddd; overflow:auto; }
+.html-viewer__content { flex:1; padding:16px; overflow:auto; }
+.html-viewer__match { background: yellow; }
+.html-viewer__signature { display:flex; gap:8px; align-items:center; margin-bottom:8px; }
+.html-viewer__toc ul { list-style:none; padding-left:0; }
+.html-viewer__toc li { margin-bottom:4px; }
+.toc-h3 { margin-left:16px; }

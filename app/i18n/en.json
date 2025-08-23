@@ -1,6 +1,7 @@
 {
   "common": {
-    "appName": "EcoBike"
+    "appName": "EcoBike",
+    "back": "Back"
   },
   "header": {
     "help": "Help",
@@ -107,6 +108,49 @@
     "page": "Page",
     "download": "Download PDF",
     "close": "Close"
+  },
+  "documents": {
+    "title": "Documents",
+    "tabs": {
+      "active": "Active",
+      "warranty": "Warranty",
+      "technical": "Technical",
+      "financial": "Financial"
+    },
+    "buttons": {
+      "open": "Open",
+      "sign": "Sign",
+      "print": "Print",
+      "download": "Download",
+      "saveHtml": "Save as HTML",
+      "close": "Close",
+      "clear": "Clear",
+      "done": "Done"
+    },
+    "viewer": {
+      "searchPlaceholder": "Search...",
+      "next": "Next",
+      "prev": "Prev",
+      "toc": "Contents",
+      "noResults": "No results"
+    },
+    "status": {
+      "needsSignature": "Needs signature",
+      "signedOn": "Signed on {date}"
+    },
+    "receipt": {
+      "lastReceipt": "Last receipt",
+      "operation": "Operation #",
+      "station": "Station",
+      "slot": "Slot",
+      "city": "City",
+      "plan": "Plan",
+      "dateTime": "Date/time",
+      "photosBeforeAfter": "Photos before/after",
+      "print": "Print",
+      "saveHtml": "Save as HTML",
+      "empty": "No operations"
+    }
   },
   "errors": {
     "offline": "No internet connection",
