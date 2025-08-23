@@ -73,6 +73,46 @@
     <button id="agreements-continue" class="btn" disabled></button>
   </section>
 
+  <section id="registration" class="hidden">
+    <h2 id="registration-title"></h2>
+    <h3 id="city-grid-title"></h3>
+    <div id="city-grid" class="city-grid">
+      <button type="button" class="city-btn" data-city="almaty">Алматы</button>
+      <button type="button" class="city-btn" data-city="astana">Астана</button>
+      <button type="button" class="city-btn" data-city="shymkent">Шымкент</button>
+      <button type="button" class="city-btn" data-city="aktobe">Актобе</button>
+      <button type="button" class="city-btn" data-city="karaganda">Караганда</button>
+      <button type="button" class="city-btn" data-city="pavlodar">Павлодар</button>
+      <button type="button" class="city-btn" data-city="ust-kamenogorsk">Усть-Каменогорск</button>
+      <button type="button" class="city-btn" data-city="taraz">Тараз</button>
+    </div>
+    <button id="detect-city" class="btn"></button>
+    <form id="reg-form">
+      <label><span id="full-name-label"></span>
+        <input type="text" id="full-name" required />
+      </label>
+      <label><span id="iin-label"></span>
+        <input type="text" id="iin" maxlength="12" required />
+      </label>
+      <label><span id="dob-label"></span>
+        <input type="date" id="dob" required />
+      </label>
+      <label><span id="email-label"></span>
+        <input type="email" id="email" />
+      </label>
+      <label><span id="region-label"></span>
+        <input type="text" id="region" required />
+      </label>
+      <label><span id="street-label"></span>
+        <input type="text" id="street" required />
+      </label>
+      <label><span id="apt-label"></span>
+        <input type="text" id="apt" />
+      </label>
+      <button type="submit" id="register-btn" class="btn"></button>
+    </form>
+  </section>
+
   <div id="app" class="hidden">
     <header>
       <div class="lang-switcher">

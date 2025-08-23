@@ -19,6 +19,21 @@ const translations = {
     agreementsTitle: 'Бастамас бұрын',
     read: 'Толық оқу',
     continue: 'Жалғастыру',
+    registrationTitle: 'Тіркелу',
+    chooseCity: 'Қаласыңызды таңдаңыз',
+    detectCity: 'GPS арқылы анықтау',
+    fullName: 'Аты-жөні',
+    iin: 'ЖСН',
+    dob: 'Туған күні',
+    email: 'Email (міндетті емес)',
+    region: 'Аудан/шағын аудан',
+    street: 'Көше және үй',
+    apt: 'Пәтер (міндетті емес)',
+    register: 'Тіркелу',
+    selectCityError: 'Алдымен қалаңызды таңдаңыз',
+    invalidIIN: 'ЖСН 12 саннан тұруы керек',
+    ageError: 'Тек 18 жастан бастап',
+    fillRequired: 'Міндетті өрістерді толтырыңыз',
     agreements: [
       {
         title: 'Пайдаланушы келісімі',
@@ -125,6 +140,21 @@ const translations = {
     agreementsTitle: 'Перед началом работы',
     read: 'Читать полностью',
     continue: 'Продолжить',
+    registrationTitle: 'Регистрация',
+    chooseCity: 'Выберите ваш город',
+    detectCity: 'Определить по GPS',
+    fullName: 'ФИО',
+    iin: 'ИИН',
+    dob: 'Дата рождения',
+    email: 'Email (опционально)',
+    region: 'Район/микрорайон',
+    street: 'Улица и дом',
+    apt: 'Квартира (опционально)',
+    register: 'Зарегистрироваться',
+    selectCityError: 'Сначала выберите город',
+    invalidIIN: 'ИИН должен состоять из 12 цифр',
+    ageError: 'Доступно только с 18 лет',
+    fillRequired: 'Заполните обязательные поля',
     agreements: [
       {
         title: 'Пользовательское соглашение',
@@ -231,6 +261,21 @@ const translations = {
     agreementsTitle: 'Before you start',
     read: 'Read full',
     continue: 'Continue',
+    registrationTitle: 'Registration',
+    chooseCity: 'Select your city',
+    detectCity: 'Detect via GPS',
+    fullName: 'Full name',
+    iin: 'IIN',
+    dob: 'Date of birth',
+    email: 'Email (optional)',
+    region: 'District',
+    street: 'Street and house',
+    apt: 'Apartment (optional)',
+    register: 'Register',
+    selectCityError: 'Please select a city',
+    invalidIIN: 'IIN must be 12 digits',
+    ageError: '18+ only',
+    fillRequired: 'Fill required fields',
     agreements: [
       {
         title: 'User Agreement',
@@ -341,6 +386,17 @@ function setLanguage(lang) {
   document.getElementById('change-number-btn').textContent = t.changeNumber;
   document.getElementById('agreements-title').textContent = t.agreementsTitle;
   document.getElementById('agreements-continue').textContent = t.continue;
+  document.getElementById('registration-title').textContent = t.registrationTitle;
+  document.getElementById('city-grid-title').textContent = t.chooseCity;
+  document.getElementById('detect-city').textContent = t.detectCity;
+  document.getElementById('full-name-label').textContent = t.fullName;
+  document.getElementById('iin-label').textContent = t.iin;
+  document.getElementById('dob-label').textContent = t.dob;
+  document.getElementById('email-label').textContent = t.email;
+  document.getElementById('region-label').textContent = t.region;
+  document.getElementById('street-label').textContent = t.street;
+  document.getElementById('apt-label').textContent = t.apt;
+  document.getElementById('register-btn').textContent = t.register;
   document.getElementById('view-tariffs').textContent = t.viewTariffs;
   renderTariffs();
   updateAgreementsText();
@@ -355,6 +411,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const phoneScreen = document.getElementById('phone-screen');
   const otpScreen = document.getElementById('otp-screen');
   const agreements = document.getElementById('agreements');
+  const registration = document.getElementById('registration');
+  const cityGrid = document.getElementById('city-grid');
+  const detectCityBtn = document.getElementById('detect-city');
+  const regForm = document.getElementById('reg-form');
   const app = document.getElementById('app');
   const phoneInput = document.getElementById('phone');
   const getCodeBtn = document.getElementById('get-code-btn');
@@ -452,7 +512,55 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.getElementById('agreements-continue').addEventListener('click', () => {
     agreements.classList.add('hidden');
+    registration.classList.remove('hidden');
+  });
+
+  cityGrid.addEventListener('click', e => {
+    if (e.target.classList.contains('city-btn')) {
+      document.querySelectorAll('.city-btn').forEach(btn => btn.classList.remove('selected'));
+      e.target.classList.add('selected');
+      selectedCity = e.target.dataset.city;
+    }
+  });
+
+  detectCityBtn.addEventListener('click', () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(() => {
+        selectedCity = 'almaty';
+        document.querySelectorAll('.city-btn').forEach(btn => {
+          btn.classList.toggle('selected', btn.dataset.city === selectedCity);
+        });
+      });
+    }
+  });
+
+  regForm.addEventListener('submit', e => {
+    e.preventDefault();
+    const t = translations[currentLang];
+    const fullName = document.getElementById('full-name').value.trim();
+    const iin = document.getElementById('iin').value.trim();
+    const dob = document.getElementById('dob').value;
+    const region = document.getElementById('region').value.trim();
+    const street = document.getElementById('street').value.trim();
+    if (!selectedCity) {
+      alert(t.selectCityError);
+      return;
+    }
+    if (!/^\d{12}$/.test(iin)) {
+      alert(t.invalidIIN);
+      return;
+    }
+    if (!isAdult(dob)) {
+      alert(t.ageError);
+      return;
+    }
+    if (!fullName || !region || !street) {
+      alert(t.fillRequired);
+      return;
+    }
+    registration.classList.add('hidden');
     app.classList.remove('hidden');
+    document.getElementById('city').value = selectedCity;
   });
 
   if ('serviceWorker' in navigator) {
@@ -462,6 +570,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 let slideIndex = 0;
 let codeSentPhone = '';
+let selectedCity = '';
 
 function updateSlide() {
   const t = translations[currentLang];
@@ -533,4 +642,16 @@ function verifyOtp() {
     document.getElementById('auth').classList.add('hidden');
     document.getElementById('agreements').classList.remove('hidden');
   }
+}
+
+function isAdult(dob) {
+  if (!dob) return false;
+  const birth = new Date(dob);
+  const today = new Date();
+  let age = today.getFullYear() - birth.getFullYear();
+  const m = today.getMonth() - birth.getMonth();
+  if (m < 0 || (m === 0 && today.getDate() < birth.getDate())) {
+    age--;
+  }
+  return age >= 18;
 }
