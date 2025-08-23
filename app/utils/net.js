@@ -1,6 +1,6 @@
 import Storage from './storage.js';
 import { queueReport } from './offline.js';
-import loadJson from './loadJson.js';
+import { loadJson } from './json.js';
 
 export async function fetchWithTimeout(url, options = {}, timeout = 8000, retries = 0) {
   for (let attempt = 0; attempt <= retries; attempt++) {
@@ -29,7 +29,8 @@ export function onNetworkChange(handler) {
 
 export async function fetchCities() {
   await new Promise(r => setTimeout(r, 300));
-  return loadJson('./data/cities.json');
+  const url = new URL('../data/cities.json', import.meta.url);
+  return loadJson(url.href);
 }
 
 export async function fetchAgreementsMeta() {
@@ -75,19 +76,24 @@ async function fetchWithCache(key, url) {
 }
 
 export function fetchSubscription() {
-  return fetchWithCache('subscription', './data/subscription.json');
+  const url = new URL('../data/subscription.json', import.meta.url);
+  return fetchWithCache('subscription', url.href);
 }
 export function fetchBike() {
-  return fetchWithCache('bike', './data/bike.json');
+  const url = new URL('../data/bike.json', import.meta.url);
+  return fetchWithCache('bike', url.href);
 }
 export function fetchMaintenance() {
-  return fetchWithCache('maintenance', './data/maintenance.json');
+  const url = new URL('../data/maintenance.json', import.meta.url);
+  return fetchWithCache('maintenance', url.href);
 }
 export function fetchQuickStats() {
-  return fetchWithCache('quick', './data/stats.json');
+  const url = new URL('../data/stats.json', import.meta.url);
+  return fetchWithCache('quick', url.href);
 }
 export function fetchNews() {
-  return fetchWithCache('news', './data/news.json');
+  const url = new URL('../data/news.json', import.meta.url);
+  return fetchWithCache('news', url.href);
 }
 
 export async function checkSubscriptionMock(uid) {
@@ -111,7 +117,8 @@ export async function fetchStationMock(stationId) {
   const delay = 300 + Math.random() * 500;
   await new Promise(r => setTimeout(r, delay));
   try {
-    const list = await loadJson('./data/stations.json');
+    const url = new URL('../data/stations.json', import.meta.url);
+    const list = await loadJson(url.href);
     const station = list.find(s => s.id === stationId);
     if (!station) return { ok: false };
     const free = Math.max(0, station.slots - station.charged);
