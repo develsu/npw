@@ -168,5 +168,51 @@
       "cityTag": "{city}"
     },
     "inProgress": "Under construction"
+  },
+  "map": {
+    "title": "Station Map",
+    "myLocation": "My location",
+    "onlyAvailable": "Only available",
+    "distanceKm": "Distance: {km} km",
+    "etaWalk": "Walk: {min} min",
+    "etaBike": "Bike: {min} min",
+    "route": "Route",
+    "offlineHint": "Geolocation unavailable",
+    "chargedSlots": "Charged: {c} / Slots: {s}"
+  },
+  "status": {
+    "ok": "Operational",
+    "down": "Down"
+  }
+,
+  "qr": {
+    "title": "Scan QR",
+    "startScan": "Start scan",
+    "scanning": "Scanning...",
+    "torchOn": "Torch on",
+    "torchOff": "Torch off",
+    "uploadImage": "Upload image",
+    "cameraError": "Camera unavailable",
+    "invalidQr": "Invalid QR code",
+    "parseHint": "Point camera at station QR"
+  },
+  "exchange": {
+    "stationInfoTitle": "Station info",
+    "availableBatteries": "Available: {n}",
+    "selectSlot": "Select slot",
+    "photoBefore": "Photo before",
+    "photoAfter": "Photo after",
+    "confirmUnlock": "Unlock",
+    "unlocking": "Unlocking...",
+    "takeBattery": "Take the battery",
+    "done": "Done",
+    "finish": "Finish",
+    "receiptTitle": "Receipt",
+    "print": "Print",
+    "saveToHistory": "Save to history",
+    "saved": "Saved",
+    "limitExceeded": "Daily limit exceeded",
+    "noCharged": "No charged batteries",
+    "stationDown": "Station unavailable"
   }
 }

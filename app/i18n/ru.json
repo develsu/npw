@@ -93,8 +93,12 @@
     "idBack": "Удостоверение — оборот",
     "selfie": "Селфи с удостоверением",
     "submit": "Завершить",
-    "warnings": { "blurry": "Фото может быть размытым" },
-    "errors": { "photo": "Слишком маленькое изображение" }
+    "warnings": {
+      "blurry": "Фото может быть размытым"
+    },
+    "errors": {
+      "photo": "Слишком маленькое изображение"
+    }
   },
   "viewer": {
     "search": "Поиск",
@@ -164,5 +168,51 @@
       "cityTag": "г. {city}"
     },
     "inProgress": "В разработке"
+  },
+  "map": {
+    "title": "Карта станций",
+    "myLocation": "Моя локация",
+    "onlyAvailable": "Только доступные",
+    "distanceKm": "Расстояние: {km} км",
+    "etaWalk": "Пешком: {min} мин",
+    "etaBike": "Велосипед: {min} мин",
+    "route": "Маршрут",
+    "offlineHint": "Геолокация недоступна",
+    "chargedSlots": "Заряженных: {c} / Слотов: {s}"
+  },
+  "status": {
+    "ok": "Работает",
+    "down": "Не работает"
+  }
+,
+  "qr": {
+    "title": "Сканировать QR",
+    "startScan": "Начать сканирование",
+    "scanning": "Сканирование...",
+    "torchOn": "Фонарик",
+    "torchOff": "Фонарик выкл",
+    "uploadImage": "Загрузить изображение",
+    "cameraError": "Камера недоступна",
+    "invalidQr": "Неверный QR",
+    "parseHint": "Наведите камеру на QR станции"
+  },
+  "exchange": {
+    "stationInfoTitle": "Информация о станции",
+    "availableBatteries": "Доступно: {n}",
+    "selectSlot": "Выберите слот",
+    "photoBefore": "Фото до",
+    "photoAfter": "Фото после",
+    "confirmUnlock": "Разблокировать",
+    "unlocking": "Разблокируем...",
+    "takeBattery": "Заберите батарею",
+    "done": "Готово",
+    "finish": "Завершить",
+    "receiptTitle": "Чек операции",
+    "print": "Печать",
+    "saveToHistory": "Сохранить в историю",
+    "saved": "Сохранено",
+    "limitExceeded": "Превышен дневной лимит",
+    "noCharged": "Нет заряженных батарей",
+    "stationDown": "Станция недоступна"
   }
 }

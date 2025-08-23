@@ -90,6 +90,48 @@ export function fetchNews() {
   return fetchWithCache('news', './data/news.json');
 }
 
+export async function checkSubscriptionMock(uid) {
+  const delay = 300 + Math.random() * 500;
+  await new Promise(r => setTimeout(r, delay));
+  return { ok: true, plan: 'Start', limitPerDay: 3, usedToday: 1 };
+}
+
+export async function checkDailyLimitMock(uid) {
+  const delay = 300 + Math.random() * 500;
+  await new Promise(r => setTimeout(r, delay));
+  return { ok: true, remaining: 2 };
+}
+
+export async function fetchStationMock(stationId) {
+  const delay = 300 + Math.random() * 500;
+  await new Promise(r => setTimeout(r, delay));
+  try {
+    const res = await fetch('./data/stations.json');
+    const list = await res.json();
+    const station = list.find(s => s.id === stationId);
+    if (!station) return { ok: false };
+    const free = Math.max(0, station.slots - station.charged);
+    station.availableSlots = Array.from({ length: free }, (_, i) => i + 1);
+    return { ok: true, station };
+  } catch (e) {
+    return { ok: false };
+  }
+}
+
+export async function requestUnlockMock(stationId, slot) {
+  const delay = 500 + Math.random() * 300;
+  await new Promise(r => setTimeout(r, delay));
+  const fail = Math.random() < 0.1;
+  if (fail) return { ok: false };
+  return { ok: true, opId: `${stationId}-${Date.now()}` };
+}
+
+export async function reportSwapMock(data) {
+  const delay = 500 + Math.random() * 300;
+  await new Promise(r => setTimeout(r, delay));
+  return { ok: true };
+}
+
 export default {
   fetchWithTimeout,
   isOnline,
@@ -102,5 +144,10 @@ export default {
   fetchBike,
   fetchMaintenance,
   fetchQuickStats,
-  fetchNews
+  fetchNews,
+  checkSubscriptionMock,
+  checkDailyLimitMock,
+  fetchStationMock,
+  requestUnlockMock,
+  reportSwapMock
 };

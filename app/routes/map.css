@@ -1,0 +1,38 @@
+.map-screen {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 56px);
+}
+
+.map-top {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #fff;
+  padding: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.map-top h2 {
+  margin: 0;
+  flex-basis: 100%;
+  font-size: 1.1rem;
+}
+
+.map-top label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.map-top button {
+  padding: 4px 8px;
+}
+
+#eb-map {
+  flex: 1;
+}
