@@ -99,7 +99,12 @@ export async function checkSubscriptionMock(uid) {
 export async function checkDailyLimitMock(uid) {
   const delay = 300 + Math.random() * 500;
   await new Promise(r => setTimeout(r, delay));
-  return { ok: true, remaining: 2 };
+  const sub = storage.get("subscription");
+  if (!sub) return { ok: true, remaining: 0 };
+  const today = new Date().toISOString().slice(0,10);
+  if (sub.usedTodayDate !== today) { sub.usedToday = 0; sub.usedTodayDate = today; storage.set("subscription", sub); }
+  const remaining = sub.limitPerDay === Infinity ? 1e9 : Math.max(0, sub.limitPerDay - sub.usedToday);
+  return { ok: true, remaining };
 }
 
 export async function fetchStationMock(stationId) {
@@ -129,6 +134,14 @@ export async function requestUnlockMock(stationId, slot) {
 export async function reportSwapMock(data) {
   const delay = 500 + Math.random() * 300;
   await new Promise(r => setTimeout(r, delay));
+  const sub = storage.get("subscription");
+  if (sub) {
+    const today = new Date().toISOString().slice(0,10);
+    if (sub.usedTodayDate !== today) { sub.usedToday = 0; sub.usedTodayDate = today; }
+    if (sub.limitPerDay === Infinity || sub.usedToday < sub.limitPerDay) { sub.usedToday++; }
+    storage.set("subscription", sub);
+  }
+  storage.set("lastOperation", { tsISO: new Date().toISOString(), data });
   return { ok: true };
 }
 

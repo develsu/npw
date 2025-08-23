@@ -227,8 +227,7 @@
   "status": {
     "ok": "Operational",
     "down": "Down"
-  }
-,
+  },
   "qr": {
     "title": "Scan QR",
     "startScan": "Start scan",
@@ -269,5 +268,67 @@
     "paymentWaiting": "Waiting for payment...",
     "paymentPaid": "Payment successful",
     "paymentFailed": "Payment failed"
+  },
+  "plans": {
+    "title": "Choose plan",
+    "perMonth": "{price}/month",
+    "perDay": "≈ {price}/day",
+    "choose": "Select",
+    "details": "Details",
+    "included": "Included",
+    "unlimited": "Unlimited",
+    "start": "Start",
+    "standard": "Standard",
+    "enterprise": "Enterprise",
+    "rental": {
+      "title": "Rental",
+      "desc": "Weekly bike rental including Start plan",
+      "pricePerWeek": "{price}/week",
+      "selectOneWeek": "Rent for 1 week",
+      "terms": ""
+    },
+    "leasing": {
+      "title": "Leasing",
+      "weeks": "{w} weeks",
+      "selectWeeks": "Select weeks",
+      "weeklyPrice": "Weekly price {price}",
+      "buyout": "Buyout after term: {price}",
+      "info": "Bike can be bought after term"
+    },
+    "features": {
+      "swapsPerDay": "{n} swaps per day",
+      "stationMaintenance": "Station maintenance (3/mo)",
+      "fieldMaintenance": "Field maintenance",
+      "gps": "GPS tracking",
+      "analytics": "Analytics",
+      "support": "Support 9:00–18:00",
+      "manager": "Personal manager",
+      "vipSupport": "24/7 support"
+    }
+  },
+  "billing": {
+    "title": "Billing",
+    "currentPlan": "Current plan",
+    "daysLeft": "{days} days left",
+    "usedOf": "{used} of {limit} swaps today",
+    "unlimited": "Unlimited",
+    "renew": "Renew",
+    "upgrade": "Upgrade",
+    "changeMethod": "Change method",
+    "cancelAutoRenew": "Cancel auto-renew",
+    "pendingPayment": "Payment pending...",
+    "paid": "Payment accepted",
+    "failed": "Payment failed",
+    "rentalStatus": "Rental active till {date}",
+    "leasingStatus": "Leasing active till {date} ({weeks} weeks)",
+    "buyout": "Buyout {price}",
+    "historyLink": "Operation history"
+  },
+  "payments": {
+    "creatingSession": "Creating payment...",
+    "waiting": "Waiting for payment...",
+    "paid": "Payment accepted",
+    "failed": "Payment failed",
+    "openWindowHint": "Finish payment in opened window"
   }
 }
