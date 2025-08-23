@@ -16,6 +16,29 @@ const translations = {
     resend: 'Қайта жіберу',
     changeNumber: 'Нөмірді өзгерту',
     help: 'Көмек',
+
+    invalidNumber: 'Нөмір қате',
+    agreementsTitle: 'Бастамас бұрын',
+    read: 'Толық оқу',
+    continue: 'Жалғастыру',
+    agreements: [
+      {
+        title: 'Пайдаланушы келісімі',
+        desc: 'Қолдану шарттары',
+        accept: 'Шарттармен келісемін'
+      },
+      {
+        title: 'Құпиялылық саясаты',
+        desc: 'Деректерді пайдалану',
+        accept: 'Деректерді өңдеуге келісемін'
+      },
+      {
+        title: 'Қауіпсіздік ережелері',
+        desc: 'Қауіпсіз жүру қағидалары',
+        accept: 'Ережелермен таныстым'
+      }
+    ]
+
     invalidNumber: 'Нөмір қате'
 
     start: 'Бастау'
@@ -38,7 +61,30 @@ const translations = {
     resend: 'Отправить снова',
     changeNumber: 'Изменить номер',
     help: 'Помощь',
+    invalidNumber: 'Неверный номер',
+    agreementsTitle: 'Перед началом работы',
+    read: 'Читать полностью',
+    continue: 'Продолжить',
+    agreements: [
+      {
+        title: 'Пользовательское соглашение',
+        desc: 'Основные условия',
+        accept: 'Принимаю условия'
+      },
+      {
+        title: 'Политика конфиденциальности',
+        desc: 'Обработка персональных данных',
+        accept: 'Согласен на обработку данных'
+      },
+      {
+        title: 'Правила безопасности',
+        desc: 'Требования по эксплуатации',
+        accept: 'Ознакомлен с правилами'
+      }
+    ]
+
     invalidNumber: 'Неверный номер'
+
 
   },
   en: {
@@ -58,10 +104,33 @@ const translations = {
     resend: 'Resend',
     changeNumber: 'Change number',
     help: 'Help',
+    invalidNumber: 'Invalid number',
+    agreementsTitle: 'Before you start',
+    read: 'Read full',
+    continue: 'Continue',
+    agreements: [
+      {
+        title: 'User Agreement',
+        desc: 'Terms of use',
+        accept: 'I accept the terms'
+      },
+      {
+        title: 'Privacy Policy',
+        desc: 'Personal data processing',
+        accept: 'I agree to data processing'
+      },
+      {
+        title: 'Safety Rules',
+        desc: 'Safe riding guidelines',
+        accept: 'I have read the rules'
+      }
+    ]
+
     invalidNumber: 'Invalid number'
 
 
     start: 'Start'
+
 
 
   }
@@ -88,6 +157,11 @@ function setLanguage(lang) {
   document.getElementById('help-btn').textContent = t.help;
   document.getElementById('resend-btn').textContent = t.resend;
   document.getElementById('change-number-btn').textContent = t.changeNumber;
+
+  document.getElementById('agreements-title').textContent = t.agreementsTitle;
+  document.getElementById('agreements-continue').textContent = t.continue;
+  updateAgreementsText();
+
   updateCodeSentText();
   updateSlide();
 }
@@ -95,7 +169,10 @@ function setLanguage(lang) {
 document.addEventListener('DOMContentLoaded', () => {
   const splash = document.getElementById('splash');
   const onboarding = document.getElementById('onboarding');
-
+  const auth = document.getElementById('auth');
+  const phoneScreen = document.getElementById('phone-screen');
+  const otpScreen = document.getElementById('otp-screen');
+  const agreements = document.getElementById('agreements');
   const auth = document.getElementById('auth');
   const phoneScreen = document.getElementById('phone-screen');
   const otpScreen = document.getElementById('otp-screen');
@@ -104,6 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const getCodeBtn = document.getElementById('get-code-btn');
   const otpInputs = document.querySelectorAll('.otp-inputs input');
   const app = document.getElementById('app');
+
 
 
   setLanguage(currentLang);
@@ -121,8 +199,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (slideIndex >= translations[currentLang].slides.length) {
       onboarding.classList.add('hidden');
       auth.classList.remove('hidden');
+
+
       auth.classList.remove('hidden');
       app.classList.remove('hidden');
+
 
 
     } else {
@@ -172,6 +253,26 @@ document.addEventListener('DOMContentLoaded', () => {
     alert('support@ecobike.kz');
   });
 
+  document.querySelectorAll('.read-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const doc = btn.parentElement.dataset.doc;
+      alert('open ' + doc);
+    });
+  });
+
+  const agreementChecks = document.querySelectorAll('#agreements input[type="checkbox"]');
+  agreementChecks.forEach(ch => {
+    ch.addEventListener('change', () => {
+      const allChecked = Array.from(agreementChecks).every(c => c.checked);
+      document.getElementById('agreements-continue').disabled = !allChecked;
+    });
+  });
+
+  document.getElementById('agreements-continue').addEventListener('click', () => {
+    agreements.classList.add('hidden');
+    app.classList.remove('hidden');
+  });
+
 
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('service-worker.js');
@@ -183,8 +284,12 @@ let slideIndex = 0;
 let codeSentPhone = '';
 
 
+let codeSentPhone = '';
+
+
 
 let codeSentPhone = '';
+
 
 
 
@@ -219,12 +324,34 @@ function updateCodeSentText() {
   }
 }
 
+
+function updateAgreementsText() {
+  const t = translations[currentLang].agreements;
+  document.getElementById('user-agreement-title').textContent = t[0].title;
+  document.getElementById('user-agreement-desc').textContent = t[0].desc;
+  document.getElementById('user-agreement-accept').textContent = t[0].accept;
+  document.getElementById('privacy-title').textContent = t[1].title;
+  document.getElementById('privacy-desc').textContent = t[1].desc;
+  document.getElementById('privacy-accept').textContent = t[1].accept;
+  document.getElementById('safety-title').textContent = t[2].title;
+  document.getElementById('safety-desc').textContent = t[2].desc;
+  document.getElementById('safety-accept').textContent = t[2].accept;
+  document.querySelectorAll('.agreement .read-btn').forEach(btn => {
+    btn.textContent = translations[currentLang].read;
+  });
+}
+
+
 function verifyOtp() {
   const code = Array.from(document.querySelectorAll('.otp-inputs input'))
     .map(i => i.value)
     .join('');
   if (code.length === 6) {
     document.getElementById('auth').classList.add('hidden');
+
+    document.getElementById('agreements').classList.remove('hidden');
+
     document.getElementById('app').classList.remove('hidden');
+
   }
 }
