@@ -19,6 +19,8 @@ import { BatteryList, BatteryEdit, BatteryShow } from './resources/batteries';
 import { ExchangeList, ExchangeShow } from './resources/exchanges';
 import { TariffList, TariffEdit, TariffShow, TariffCreate } from './resources/tariffs';
 import { TripList, TripShow } from './resources/trips';
+import { CityList, CityEdit, CityShow, CityCreate } from './resources/cities';
+
 
 // Дополнительные страницы
 import Analytics from './components/Analytics';
@@ -156,6 +158,20 @@ const i18nProvider = polyglotI18nProvider(() => ({
                 end_time: 'Конец',
             },
         },
+        cities: {
+            name: 'Город |||| Города',
+            fields: {
+                id: 'ID',
+                name_ru: 'Название (RU)',
+                name_kz: 'Название (KZ)',
+                name_en: 'Название (EN)',
+                timezone: 'Часовой пояс',
+                'coordinates.lat': 'Широта',
+                'coordinates.lng': 'Долгота',
+                created_at: 'Создан',
+                updated_at: 'Обновлен',
+            },
+        },
     },
 }), 'ru');
 
@@ -243,6 +259,14 @@ const App = () => {
                     list={TripList}
                     show={TripShow}
                 />
+                <Resource
+                    name="cities"
+                    list={CityList}
+                    edit={CityEdit}
+                    show={CityShow}
+                    create={CityCreate}
+                />
+
 
                 {/* Дополнительные маршруты */}
                 <CustomRoutes>
