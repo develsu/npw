@@ -18,7 +18,40 @@
       <h2 id="slide-title"></h2>
       <p id="slide-desc"></p>
     </div>
+
+    <button id="next-btn" class="btn"></button>
+  </section>
+
+  <section id="auth" class="hidden">
+    <header>
+      <div class="lang-switcher">
+        <button class="lang-btn" data-lang="kz">🇰🇿</button>
+        <button class="lang-btn" data-lang="ru">🇷🇺</button>
+        <button class="lang-btn" data-lang="en">🇬🇧</button>
+      </div>
+      <button id="help-btn" class="btn"></button>
+    </header>
+    <div id="phone-screen">
+      <h2 id="auth-title"></h2>
+      <input type="tel" id="phone" placeholder="+7 ___ ___ __ __" />
+      <button id="get-code-btn" class="btn"></button>
+    </div>
+    <div id="otp-screen" class="hidden">
+      <p id="code-sent-text"></p>
+      <div class="otp-inputs">
+        <input inputmode="numeric" maxlength="1" />
+        <input inputmode="numeric" maxlength="1" />
+        <input inputmode="numeric" maxlength="1" />
+        <input inputmode="numeric" maxlength="1" />
+        <input inputmode="numeric" maxlength="1" />
+        <input inputmode="numeric" maxlength="1" />
+      </div>
+      <button id="resend-btn" class="btn"></button>
+      <button id="change-number-btn" class="btn"></button>
+    </div>
+
     <button id="next-btn"></button>
+
   </section>
 
   <div id="app" class="hidden">
