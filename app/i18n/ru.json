@@ -258,5 +258,16 @@
     "limitExceeded": "Превышен дневной лимит",
     "noCharged": "Нет заряженных батарей",
     "stationDown": "Станция недоступна"
+  },
+  "integrations": {
+    "pushPermissionTitle": "Включить уведомления",
+    "pushPermissionBody": "Мы используем их для важных сообщений",
+    "enablePush": "Включить push",
+    "enabled": "Push включён",
+    "denied": "Push запрещён",
+    "paymentInit": "Открываем оплату...",
+    "paymentWaiting": "Ожидание оплаты...",
+    "paymentPaid": "Оплата прошла",
+    "paymentFailed": "Оплата не прошла"
   }
 }

@@ -258,5 +258,16 @@
     "limitExceeded": "Daily limit exceeded",
     "noCharged": "No charged batteries",
     "stationDown": "Station unavailable"
+  },
+  "integrations": {
+    "pushPermissionTitle": "Enable notifications",
+    "pushPermissionBody": "We use them for important updates",
+    "enablePush": "Enable push",
+    "enabled": "Push enabled",
+    "denied": "Push denied",
+    "paymentInit": "Opening payment...",
+    "paymentWaiting": "Waiting for payment...",
+    "paymentPaid": "Payment successful",
+    "paymentFailed": "Payment failed"
   }
 }
