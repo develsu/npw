@@ -1,5 +1,36 @@
 {
-  "common": {"appName": "EcoBike", "language": "Язык"},
-  "auth": {"login": "Войти", "logout": "Выйти"},
-  "errors": {"offline": "Нет соединения"}
+  "common": {
+    "appName": "EcoBike"
+  },
+  "header": {
+    "help": "Помощь",
+    "language": "Язык"
+  },
+  "auth": {
+    "title": "Вход",
+    "phone": "Телефон",
+    "password": "Пароль",
+    "login": "Войти",
+    "logout": "Выйти"
+  },
+  "onboarding": {
+    "welcome": "Добро пожаловать в EcoBike!",
+    "start": "Начать"
+  },
+  "agreements": {
+    "title": "Соглашения",
+    "accept": "Принять"
+  },
+  "cities": {
+    "choose": "Выберите город"
+  },
+  "errors": {
+    "offline": "Нет соединения",
+    "required": "Поле обязательно"
+  },
+  "buttons": {
+    "next": "Далее",
+    "back": "Назад",
+    "ok": "ОК"
+  }
 }
