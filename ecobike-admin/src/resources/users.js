@@ -11,7 +11,6 @@ import {
     Edit,
     SimpleForm,
     TextInput,
-    EmailInput,
     BooleanInput,
     Create,
     Filter,
@@ -619,7 +618,7 @@ export const UserEdit = (props) => (
         <SimpleForm>
             <TextInput source="iin" label="ИИН" />
             <TextInput source="full_name" label="ФИО" />
-            <EmailInput source="email" label="Email" required />
+            <TextInput source="email" label="Email" type="email" required />
             <TextInput source="phone" label="Телефон" />
             <DateField source="birth_date" label="Дата рождения" />
             <TextInput source="address" label="Адрес" multiline />
@@ -668,7 +667,7 @@ export const UserCreate = (props) => (
         <SimpleForm>
             <TextInput source="iin" label="ИИН" required />
             <TextInput source="full_name" label="ФИО" required />
-            <EmailInput source="email" label="Email" required />
+            <TextInput source="email" label="Email" type="email" required />
             <TextInput source="phone" label="Телефон" required />
             <DateField source="birth_date" label="Дата рождения" />
             <TextInput source="address" label="Адрес" multiline />
