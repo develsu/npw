@@ -5,10 +5,13 @@ import {
     NumberInput, SelectInput, BooleanInput, Filter, SearchInput,
     useRecordContext, useDataProvider, useNotify, useRefresh,
     TopToolbar, EditButton, DeleteButton, ShowButton, CreateButton,
-    ExportButton, FilterButton, Tab, TabbedShowLayout, Card, CardContent,
-    Typography, Box, Grid, Button, Chip, Avatar, FunctionField,
+    ExportButton, FilterButton, Tab, TabbedShowLayout, FunctionField,
     ReferenceInput, AutocompleteInput, required, regex
 } from 'react-admin';
+
+import {
+    Card, CardContent, Typography, Box, Grid, Button, Chip, Avatar
+} from '@mui/material';
 import {
     LocationOn, Battery0Bar, Battery1Bar, Battery2Bar, Battery3Bar,
     Battery4Bar, Battery5Bar, Battery6Bar, BatteryFull, BatteryUnknown,
