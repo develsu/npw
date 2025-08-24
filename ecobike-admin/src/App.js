@@ -20,6 +20,13 @@ import { ExchangeList, ExchangeShow } from './resources/exchanges';
 import { TariffList, TariffEdit, TariffShow, TariffCreate } from './resources/tariffs';
 import { TripList, TripShow } from './resources/trips';
 import { CityList, CityEdit, CityShow, CityCreate } from './resources/cities';
+import {
+    ContentPageList,
+    ContentPageEdit,
+    ContentPageCreate,
+    ContentPageShow,
+    ContentPageIcon,
+} from './resources/contentPages';
 
 
 // Дополнительные страницы
@@ -172,6 +179,20 @@ const i18nProvider = polyglotI18nProvider(() => ({
                 updated_at: 'Обновлен',
             },
         },
+        pages: {
+            name: 'Контентная страница |||| Контентные страницы',
+            fields: {
+                id: 'ID',
+                title: 'Заголовок',
+                slug: 'Слаг',
+                meta_title: 'Мета заголовок',
+                meta_description: 'Мета описание',
+                content: 'Содержимое',
+                published: 'Опубликовано',
+                created_at: 'Создано',
+                updated_at: 'Обновлено',
+            },
+        },
     },
 }), 'ru');
 
@@ -265,6 +286,14 @@ const App = () => {
                     edit={CityEdit}
                     show={CityShow}
                     create={CityCreate}
+                />
+                <Resource
+                    name="pages"
+                    list={ContentPageList}
+                    edit={ContentPageEdit}
+                    show={ContentPageShow}
+                    create={ContentPageCreate}
+                    icon={ContentPageIcon}
                 />
 
 
