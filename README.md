@@ -95,3 +95,30 @@
 - **PWA**: Service Worker, Web App Manifest
 
 ## 📦 Структура проекта
+
+## 🚀 Запуск приложений
+
+### Админ-панель
+
+```bash
+cd ecobike-admin
+npm install
+npm start
+```
+
+### Пользовательское приложение
+
+```bash
+cd app
+npm install
+npx http-server .
+```
+
+### Деплой на Firebase
+
+```bash
+npm run deploy       # deploy both hosting targets
+npm run deploy:app   # только приложение
+npm run deploy:admin # только админка
+```
+
